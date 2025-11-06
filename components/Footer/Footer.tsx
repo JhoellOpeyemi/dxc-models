@@ -1,0 +1,92 @@
+"use client";
+
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+import StyledLink from "../StyledLink/StyledLink";
+
+import "./footer.css";
+
+const Footer = () => {
+  const pathname = usePathname();
+  const isStudioPage = pathname?.startsWith("/studio");
+
+  const linkArray = [
+    { path: "/about", label: "About us" },
+    { path: "/models", label: "Models" },
+    { path: "/academy", label: "Academy" },
+    { path: "/apply", label: "Apply" },
+    { path: "/shop", label: "Shop" },
+    { path: "/blog", label: "Blog" },
+    { path: "/contact", label: "Contact" },
+  ];
+
+  return (
+    <>
+      {isStudioPage ? (
+        <div></div>
+      ) : (
+        <footer className="footer-container">
+          <div className="footer-content-container container">
+            <div className="footer-inner-content-container">
+              <div className="footer-info-container">
+                <div className="location">
+                  <h5 className="info-heading">Location:</h5>
+                  <p>10, Iluseyi Street, Surulere, Lagos, Nigeria</p>
+                </div>
+
+                <div className="contact">
+                  <h5 className="info-heading">For Enquiries:</h5>
+                  <Link href="mailto:info@dxcmodels.com" target="_blank">
+                    info@dxcmodels.com
+                  </Link>
+                  <p>+234 813 7427 904</p>
+                </div>
+              </div>
+
+              <nav className="footer-links-container">
+                <ul className="footer-links">
+                  {linkArray.map(
+                    ({ path, label }: { path: string; label: string }) => (
+                      <li key={path} className="footer-link-list">
+                        <StyledLink path={path} label={label} />
+                      </li>
+                    )
+                  )}
+                </ul>
+              </nav>
+
+              <div className="footer-image-container">
+                <Image
+                  src="/hero-img.png"
+                  alt=""
+                  fill
+                  className="footer-image"
+                />
+              </div>
+            </div>
+
+            <div className="socials-brand-container">
+              <div className="social-links-container">
+                <StyledLink path="/" label="WhatsApp" />
+                <StyledLink path="/" label="Twitter" />
+                <StyledLink path="/" label="Instagram" />
+                <StyledLink path="/" label="Facebook" />
+              </div>
+
+              <div className="footer-brand-container">
+                <h5 className="footer-brand">
+                  <span className="brand-dxc">Dxc</span>
+                  <span className="brand-models">Models</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </footer>
+      )}
+    </>
+  );
+};
+
+export default Footer;

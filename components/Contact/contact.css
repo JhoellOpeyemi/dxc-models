@@ -1,0 +1,14 @@
+.contact-section-container {
+  padding-top: 8rem;
+}
+
+.contact-heading {
+  font-size: var(--md-heading);
+  width: 60%;
+  text-transform: uppercase;
+}
+
+.contact-closing-remark {
+  width: 40%;
+  margin-top: 4rem;
+}

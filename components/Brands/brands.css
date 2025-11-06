@@ -1,0 +1,53 @@
+.brands-container {
+  margin-top: 14rem;
+  width: 90%;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+  gap: var(--gap);
+}
+
+.brands-text-container {
+  position: relative;
+  width: 40%;
+  align-self: flex-end;
+}
+
+.brands-text-container h4 {
+  font-size: var(--heading);
+  letter-spacing: -3px;
+  font-weight: 500;
+}
+
+.brands-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) * 0.8) calc(var(--gap) * 1.6);
+  margin-top: 1.5rem;
+}
+
+.brand {
+  white-space: nowrap;
+}
+
+.brands-image-container {
+  position: relative;
+  width: 60%;
+  width: 40rem;
+  height: 47.5rem;
+  max-height: 47.5rem;
+  margin-bottom: 10rem;
+}
+
+.brands-image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-overlay);
+  z-index: 2;
+}
+
+.brand-image {
+  object-fit: cover;
+}

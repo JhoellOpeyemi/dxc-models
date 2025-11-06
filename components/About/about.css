@@ -1,0 +1,21 @@
+.about-container {
+  position: relative;
+  padding-top: 20vh;
+  display: flex;
+  gap: var(--gap);
+}
+
+.about-heading {
+  position: sticky;
+  top: 20vh;
+  width: 50%;
+  height: fit-content;
+}
+
+.about-text-container {
+  width: 50%;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 4);
+}

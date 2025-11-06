@@ -1,0 +1,27 @@
+.header {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  mix-blend-mode: difference;
+  color: #ccc;
+  z-index: 3;
+}
+
+.logo {
+  font-size: var(--text);
+  font-weight: 500;
+}
+
+.nav-container {
+  gap: calc(var(--gap) * 2.4);
+}
+
+.nav-container .link {
+  font-size: 0.9rem;
+}
+
+.nav-link svg {
+  width: 24;
+  height: 24;
+}

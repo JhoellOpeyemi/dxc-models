@@ -1,0 +1,58 @@
+.home-model-card-container {
+  gap: calc(var(--gap) * 1.2);
+  align-items: center;
+  text-align: center;
+}
+
+.home-model-image-container {
+  position: relative;
+  width: 15.5rem;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.home-model-image {
+  object-fit: cover;
+}
+
+.home-model-name {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.home-model-stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(var(--gap) * 1.2) calc(var(--gap) * 1.2);
+}
+
+.home-model-stat {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.home-model-stat span {
+  display: block;
+}
+
+.stat-heading {
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.stat-value {
+  font-size: 1rem;
+}
+
+.home-model-stat-divider {
+  width: 0.125rem;
+  height: 3rem;
+  background-color: var(--color-light-text);
+}
