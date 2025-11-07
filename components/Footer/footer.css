@@ -1,7 +1,7 @@
 .footer-container {
   background-color: var(--color-footer-bg);
   color: var(--color-lighter-text);
-  margin-top: 6rem;
+  margin-top: 7rem;
   overflow: hidden;
 }
 
@@ -31,7 +31,11 @@
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--gap) * 0.8);
+  gap: var(--gap);
+}
+
+.footer-links .link {
+    font-size: 0.9rem;
 }
 
 .footer-image-container {

@@ -29,21 +29,6 @@ const HomeModelCard = ({ model }: { model: ModelType }) => {
             <span className="stat-heading">Eyes</span>
             <span className="stat-value">{model.eyes}</span>
           </li>
-          <div className="home-model-stat-divider" />
-          <li className="home-model-stat">
-            <span className="stat-heading">Chest</span>
-            <span className="stat-value">{model.chest}</span>
-          </li>
-          <div className="home-model-stat-divider" />
-          <li className="home-model-stat">
-            <span className="stat-heading">Waist</span>
-            <span className="stat-value">{model.waist}</span>
-          </li>
-          <div className="home-model-stat-divider" />
-          <li className="home-model-stat">
-            <span className="stat-heading">Hips</span>
-            <span className="stat-value">{model.hips}</span>
-          </li>
         </ul>
       </div>
     </div>

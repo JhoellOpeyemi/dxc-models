@@ -95,7 +95,10 @@ export const model = defineType({
       name: "tag",
       type: "string",
       options: {
-        list: [{ title: "Top", value: "top" }],
+        list: [
+          { title: "Top", value: "top" },
+          { title: "Normal", value: "normal" },
+        ],
       },
     }),
   ],

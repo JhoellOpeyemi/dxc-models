@@ -213,6 +213,10 @@
             {
               "type": "string",
               "value": "top"
+            },
+            {
+              "type": "string",
+              "value": "normal"
             }
           ]
         },

@@ -6,7 +6,7 @@
 
 .home-model-image-container {
   position: relative;
-  width: 15.5rem;
+  width: 16rem;
   aspect-ratio: 1 / 1;
   overflow: hidden;
 }
@@ -48,7 +48,7 @@
 }
 
 .stat-value {
-  font-size: 1rem;
+  font-size: 0.9375rem;
 }
 
 .home-model-stat-divider {

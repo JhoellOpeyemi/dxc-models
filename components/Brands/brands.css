@@ -31,16 +31,16 @@
   white-space: nowrap;
 }
 
-.brands-image-container {
+.brands-video-container {
   position: relative;
   width: 60%;
   width: 40rem;
-  height: 47.5rem;
-  max-height: 47.5rem;
-  margin-bottom: 10rem;
+  height: 41rem;
+  max-height: 41rem;
+  margin-bottom: 12rem;
 }
 
-.brands-image-container::before {
+.brands-video-container::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -48,6 +48,8 @@
   z-index: 2;
 }
 
-.brand-image {
+.brands-video {
+    width: 100%;
+    height: 100%;
   object-fit: cover;
 }

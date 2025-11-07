@@ -20,7 +20,7 @@ const HomeModels = () => {
               <HomeModelCard key={index} model={model} />
             ))}
 
-            <StyledLink path="" label="View All Models" />
+            <StyledLink path="/models" label="View All Models" />
           </>
         </div>
 

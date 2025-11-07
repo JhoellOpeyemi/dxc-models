@@ -37,8 +37,11 @@ const Brands = () => {
         </ul>
       </div>
 
-      <div className="brands-image-container">
-        <Image src="/brands-img.png" alt="" fill className="brand-image" />
+      <div className="brands-video-container">
+        <video className='brands-video' autoPlay muted loop playsInline>
+            <source src='/branding-vid.mp4' type='video/mp4' />
+            Your browser does not support the video tag
+        </video>
       </div>
     </div>
   );

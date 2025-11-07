@@ -21,6 +21,7 @@
 }
 
 .home-models-cards-container .link {
+    font-size: var(--md-text);
   font-weight: 500;
   align-self: center;
 }

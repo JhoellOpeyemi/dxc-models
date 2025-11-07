@@ -44,7 +44,7 @@ export type Model = {
   eyes?: string;
   hair?: string;
   shoe?: number;
-  tag?: "top";
+  tag?: "top" | "normal";
 };
 
 export type Blog = {
