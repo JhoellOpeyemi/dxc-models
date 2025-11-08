@@ -39,26 +39,22 @@ export const model = defineType({
       name: "bust",
       type: "number",
       hidden: ({ parent }) => (parent?.gender === "female" ? false : true),
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "hips",
       type: "number",
       hidden: ({ parent }) => (parent?.gender === "female" ? false : true),
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "dress",
       type: "number",
       hidden: ({ parent }) => (parent?.gender === "female" ? false : true),
-      validation: (rule) => rule.required(),
     }),
     // male only fields
     defineField({
       name: "chest",
       type: "number",
       hidden: ({ parent }) => (parent?.gender === "male" ? false : true),
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "inseam",
@@ -100,6 +96,7 @@ export const model = defineType({
           { title: "Normal", value: "normal" },
         ],
       },
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
