@@ -30,29 +30,6 @@
   gap: calc(var(--gap) * 1.2) calc(var(--gap) * 1.2);
 }
 
-.home-model-stat {
-  text-transform: capitalize;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
 
-.home-model-stat span {
-  display: block;
-}
 
-.stat-heading {
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-style: italic;
-}
 
-.stat-value {
-  font-size: 0.9375rem;
-}
-
-.home-model-stat-divider {
-  width: 0.125rem;
-  height: 3rem;
-  background-color: var(--color-light-text);
-}

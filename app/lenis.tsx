@@ -9,7 +9,7 @@ const Lenis = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <ReactLenis options={{ duration: 2 }} root>
+    <ReactLenis options={{ duration: 2.5 }} root>
       {children}
     </ReactLenis>
   );

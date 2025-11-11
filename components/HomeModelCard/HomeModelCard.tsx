@@ -15,17 +15,17 @@ const HomeModelCard = ({ model }: { model: ModelType }) => {
         <h3 className="home-model-name">{model.name}</h3>
 
         <ul className="home-model-stats-container">
-          <li className="home-model-stat">
+          <li className="model-stat">
             <span className="stat-heading">Height</span>
             <span className="stat-value">{model.height}</span>
           </li>
-          <div className="home-model-stat-divider" />
-          <li className="home-model-stat">
+          <div className="stat-divider" />
+          <li className="model-stat">
             <span className="stat-heading">Hair</span>
             <span className="stat-value">{model.hair}</span>
           </li>
-          <div className="home-model-stat-divider" />
-          <li className="home-model-stat">
+          <div className="stat-divider" />
+          <li className="model-stat">
             <span className="stat-heading">Eyes</span>
             <span className="stat-value">{model.eyes}</span>
           </li>

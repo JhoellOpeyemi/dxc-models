@@ -5,3 +5,8 @@ export const formatDate = (date: string) => {
     year: "numeric",
   });
 };
+
+export const formatIndex = (index: number) => {
+    if (index < 10) return `0${index + 1}`
+    else return index
+}
