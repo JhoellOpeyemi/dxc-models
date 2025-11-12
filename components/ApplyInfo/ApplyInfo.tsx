@@ -63,7 +63,7 @@ const ApplyInfo = () => {
       <div className="apply-info-images-container">
         <div className="apply-info-image-container">
           <Image
-            src="/brands-img.png"
+            src="/brands-img.webp"
             alt=""
             fill
             className="apply-info-image"
@@ -71,7 +71,7 @@ const ApplyInfo = () => {
         </div>
         <div className="apply-info-image-container">
           <Image
-            src="/brands-img.png"
+            src="/brands-img.webp"
             alt=""
             fill
             className="apply-info-image"
@@ -79,7 +79,7 @@ const ApplyInfo = () => {
         </div>
         <div className="apply-info-image-container">
           <Image
-            src="/brands-img.png"
+            src="/brands-img.webp"
             alt=""
             fill
             className="apply-info-image"
@@ -87,7 +87,7 @@ const ApplyInfo = () => {
         </div>
         <div className="apply-info-image-container">
           <Image
-            src="/brands-img.png"
+            src="/brands-img.webp"
             alt=""
             fill
             className="apply-info-image"

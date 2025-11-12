@@ -31,7 +31,12 @@ const ApplyHero = () => {
       </div>
 
       <div className="apply-hero-image-container">
-        <Image src="/brands-img.png" alt="" className="apply-hero-image" fill />
+        <Image
+          src="/brands-img.webp"
+          alt=""
+          className="apply-hero-image"
+          fill
+        />
       </div>
     </section>
   );

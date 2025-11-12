@@ -7,7 +7,7 @@ const Value = () => {
   return (
     <section className="value-container">
       <div className="value-image-container">
-        <Image src="/brands-img.png" alt="" fill className="value-image" />
+        <Image src="/brands-img.webp" alt="" fill className="value-image" />
       </div>
 
       <div className="value-text-container">

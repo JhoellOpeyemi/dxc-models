@@ -10,7 +10,7 @@ const BlogHero = () => {
       <div className="blog-hero-image-group">
         <div className="blog-hero-image-container">
           <Image
-            src="/brands-img.png"
+            src="/brands-img.webp"
             alt=""
             className="blog-hero-image"
             fill
@@ -18,7 +18,7 @@ const BlogHero = () => {
         </div>
         <div className="blog-hero-image-container">
           <Image
-            src="/brands-img.png"
+            src="/brands-img.webp"
             alt=""
             className="blog-hero-image"
             fill

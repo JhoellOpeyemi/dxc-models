@@ -9,10 +9,12 @@
     "lint": "eslint",
     "predev": "npm run typegen",
     "prebuild": "npm run typegen",
-    "typegen": "sanity schema extract  --path=./sanity/extract.json && sanity typegen generate"
+    "typegen": "sanity schema extract  --path=./sanity/extract.json && sanity typegen generate",
+    "email": "email dev --dir components/Emails"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@react-email/components": "1.0.1",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.12.0",
     "@types/markdown-it": "^14.1.2",
@@ -23,12 +25,16 @@
     "next-sanity": "^11.6.3-canary.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-email": "5.0.3",
+    "resend": "^6.4.2",
     "sanity": "^4.12.0",
     "sanity-plugin-markdown": "^6.0.0",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@react-email/preview-server": "^5.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
