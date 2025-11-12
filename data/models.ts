@@ -7,6 +7,7 @@ export type ModelType = {
   hips: string;
   eyes: string;
   hair: string;
+  gallery: string[];
 };
 
 export const models: ModelType[] = [
@@ -19,6 +20,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -29,6 +39,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -39,6 +58,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -49,6 +77,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -59,6 +96,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -69,6 +115,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -79,6 +134,15 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
   {
     name: "Model One",
@@ -89,5 +153,14 @@ export const models: ModelType[] = [
     hips: "35",
     eyes: "black",
     hair: "brown",
+    gallery: [
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+      "/brands-img.webp",
+    ],
   },
 ];

@@ -14,20 +14,15 @@ const HomeModelCard = ({ model }: { model: ModelType }) => {
       <div className="home-model-info-container">
         <h3 className="home-model-name">{model.name}</h3>
 
-        <ul className="home-model-stats-container">
+        <ul className="model-stats-container">
           <li className="model-stat">
-            <span className="stat-heading">Height</span>
+            <span className="stat-heading">Height — </span>
             <span className="stat-value">{model.height}</span>
           </li>
           <div className="stat-divider" />
           <li className="model-stat">
-            <span className="stat-heading">Hair</span>
-            <span className="stat-value">{model.hair}</span>
-          </li>
-          <div className="stat-divider" />
-          <li className="model-stat">
-            <span className="stat-heading">Eyes</span>
-            <span className="stat-value">{model.eyes}</span>
+            <span className="stat-heading">Chest  — </span>
+            <span className="stat-value">{model.chest}</span>
           </li>
         </ul>
       </div>

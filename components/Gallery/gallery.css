@@ -1,0 +1,9 @@
+.gallery-section-container {
+    margin-top: 7rem;
+}
+
+.gallery-media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: calc(var(--gap) * 1.2);
+}

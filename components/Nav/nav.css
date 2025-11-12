@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%);
   mix-blend-mode: difference;
-  color: #ccc;
+  color: var(--color-mix);
   z-index: 3;
   transition: transform 0.25s linear;
 }

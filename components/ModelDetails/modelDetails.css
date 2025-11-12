@@ -1,0 +1,36 @@
+.model-details-section-container {
+    position: relative;
+    padding-top: 15vh;
+}
+
+.model-details-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: calc(var(--gap) * 1.6);
+}
+
+.model-name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: var(--heading);
+    letter-spacing: -2px;
+    width: 50%;
+}
+
+.model-details-content .model-stats-container{
+    justify-content: flex-start;
+    margin-top: 3rem;
+}
+
+.book-model-btn {
+    position: sticky;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: var(--button);
+    margin-top: 3rem;
+  color: var(--color-mix);
+    mix-blend-mode: difference;
+}

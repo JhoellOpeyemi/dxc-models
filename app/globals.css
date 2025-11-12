@@ -9,6 +9,7 @@
   --color-overlay: rgba(0, 0, 0, 0.2);
   --color-dark-overlay: rgba(0, 0, 0, 0.75);
   --color-white: #fff;
+  --color-mix: #ddd;
 
   /* font sizes */
   --xxl-heading: 22.5rem; /* max 22.5rem */
@@ -84,5 +85,8 @@ textarea {
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-montserrat), sans-serif;
 }

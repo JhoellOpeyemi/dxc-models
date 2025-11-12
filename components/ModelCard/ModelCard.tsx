@@ -15,12 +15,12 @@ const ModelCard = ({ model, index }: { model: ModelType; index: number }) => {
       </li>
 
       <h3 className="model-name">{model.name}</h3>
-      <div className="model-stat-container">
+      {/* <div className="model-stat-container">
         <p className="model-stat">
-          <span className="stat-heading">Eyes</span>
-          <span className="stat-value">{model.eyes}</span>
+          <span className="stat-heading">Chest  — </span>
+            <span className="stat-value">{model.chest}</span>
         </p>
-      </div>
+      </div> */}
     </>
   );
 };
