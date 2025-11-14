@@ -9,10 +9,5 @@
 .form-btn {
   font-size: var(--button);
   font-weight: 700;
-  line-height: 1;
-  background: none;
-  border: none;
   color: var(--color-lighter-text);
-  cursor: pointer;
-  font-family: var(--font-montserrat), sans-serif;
 }

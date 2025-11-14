@@ -1,0 +1,47 @@
+.booking-form-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 4;
+  backdrop-filter: blur(5px);
+}
+
+.booking-form-container {
+  position: fixed;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(60%, 35rem);
+  z-index: 5;
+}
+
+.booking-form-container .form {
+  padding: 4rem 3rem;
+}
+
+.close-form-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: var(--md-text);
+  color: var(--color-lighter-text);
+}
+
+.booking-form-container .input-group-container {
+  display: flex;
+  gap: calc(var(--gap) * 2.4);
+  margin-bottom: 1.25rem;
+}
+
+.booking-form-container .input-group {
+  width: 50%;
+}
+
+.booking-form-container .form-btn-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.booking-form-container .form-btn {
+  font-size: var(--sm-button);
+}

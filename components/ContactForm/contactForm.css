@@ -26,17 +26,6 @@
   width: 50%;
 }
 
-.contact-form-textarea {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid var(--color-lighter-text);
-  color: var(--color-lighter-text);
-  padding: 0.35rem;
-  line-height: 1.4;
-}
-
 .contact-form-textarea::placeholder {
   color: var(--color-lighter-text);
   font-size: 0.9rem;

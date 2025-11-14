@@ -22,7 +22,7 @@ const ContactForm = () => {
 
           <div className="contact-form-textarea-container">
             <textarea
-              className="contact-form-textarea"
+              className="styled-textarea"
               id="message"
               placeholder="Type your message here..."
             ></textarea>
