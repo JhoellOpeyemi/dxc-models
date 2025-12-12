@@ -1,16 +1,25 @@
 import Image from "next/image";
-import type { ModelType } from "@/data/models";
+import { Model } from "@/sanity/types";
+import { urlFor } from "@/sanity/lib/image";
 import { formatIndex } from "@/utils";
 
 import "./modelCard.css";
 
-const ModelCard = ({ model, index }: { model: ModelType; index: number }) => {
+const ModelCard = ({ model, index }: { model: Model; index: number }) => {
   return (
     <>
       <li className="model-card-container">
         <p className="model-index">{formatIndex(index)}</p>
         <div className="model-card-image-container">
-          <Image src={model.image} alt="" className="model-card-image" fill />
+          {model.headshot && (
+            <Image
+              src={urlFor(model.headshot).auto("format").url()}
+              alt=""
+              className="home-model-image"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              fill
+            />
+          )}
         </div>
       </li>
 

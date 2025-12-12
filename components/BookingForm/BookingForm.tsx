@@ -1,20 +1,11 @@
 import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {bookingSchema} from '@/app/api/bookings/route'
 
-// import StyledInput from "@/components/StyledInput/StyledInput";
-// import StyledSelect from "@/components/StyledSelect/StyledSelect";
 import FormBtn from "@/components/FormBtn/FormBtn";
 
 import "./bookingForm.css";
-
-const bookingSchema = z.object({
-  modelName: z.string().min(1, "Model name is required"),
-  clientName: z.string().min(1, "Client name is required"),
-  email: z.email("Invalid email address"),
-  eventDate: z.iso.date("Invalid date format"),
-  message: z.string().min(1, "Message is required"),
-});
 
 export type BookingFormData = z.infer<typeof bookingSchema>;
 
@@ -62,7 +53,7 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
 
             <div className="input-group">
               <label htmlFor="clientName" className="styled-input-label">
-                Your Full Name
+                Your Name
               </label>
               <input
                 {...register("clientName")}

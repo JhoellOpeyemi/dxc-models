@@ -116,7 +116,7 @@ export const model = defineType({
       name: "tag",
       type: "string",
       description:
-        "Tag the model as 'Top'(shows on homepage and should be limited to a maximum of 6) or 'Normal'",
+        "Tag the model as 'Top(shows on homepage and should be limited to a maximum of 6)' or 'Normal'",
       options: {
         list: [
           { title: "Top", value: "top" },

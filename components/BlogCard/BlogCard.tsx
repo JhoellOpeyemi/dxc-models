@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-
+import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { Blog } from "@/sanity/types";
 
@@ -34,10 +33,12 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
 
       <div className="blog-image-container">
         {blog.image && (
-          <img
+          <Image
             src={urlFor(blog.image).auto("format").url()}
             alt=""
             className="blog-image"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            fill
           />
         )}
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import Providers from '@/app/providers'
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
 import Lenis from "./lenis";
@@ -90,7 +91,9 @@ export default function RootLayout({
       <body>
         <Lenis>
           <Nav />
-          {children}
+          <Providers>
+            {children}
+          </Providers>
           <Footer />
         </Lenis>
       </body>

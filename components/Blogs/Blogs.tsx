@@ -1,20 +1,25 @@
-import { client } from "@/sanity/lib/client";
-import { BLOGS_QUERY } from "@/sanity/lib/queries";
-import { Blog } from "@/sanity/types";
+"use client";
+
+import { useBlogs } from "@/sanity/lib/hooks";
 
 import BlogCard from "@/components/BlogCard/BlogCard";
 
 import "./blogs.css";
 
-const Blogs = async () => {
-  const blogs = await client.fetch<Blog[]>(BLOGS_QUERY);
+const Blogs = () => {
+  const { data: blogs, isLoading, error } = useBlogs();
+
+  console.log(blogs);
+
+  if (isLoading) return <p>Loading Blogs...</p>;
+  if (error) return <p>Error loading blogs: {error.message}</p>;
 
   return (
     <section className="blogs-section-container">
-      <p className="blogs-count">All ({blogs.length})</p>
+      <p className="blogs-count">All ({blogs?.length})</p>
 
       <div className="blogs-container">
-        {blogs.map((blog) => (
+        {blogs?.map((blog) => (
           <article key={blog?._id}>
             <BlogCard blog={blog} />
           </article>

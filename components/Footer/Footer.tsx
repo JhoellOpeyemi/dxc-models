@@ -61,8 +61,9 @@ const Footer = () => {
                 <Image
                   src="/hero-img.png"
                   alt=""
-                  fill
                   className="footer-image"
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  fill
                 />
               </div>
             </div>

@@ -1,10 +1,20 @@
-import { models, ModelType } from "@/data/models";
+"use client";
+
+import { useHomeModels } from "@/sanity/lib/hooks";
 
 import HomeModelCard from "@/components/HomeModelCard/HomeModelCard";
 import StyledLink from "@/components/StyledLink/StyledLink";
+
 import "./homeModels.css";
 
 const HomeModels = () => {
+  const { data: models, isLoading, error } = useHomeModels();
+
+  console.log(models);
+
+  if (isLoading) return <p>Loading Models...</p>;
+  if (error) return <p>Error loading models: {error.message}</p>;
+
   return (
     <section className="home-models-container">
       <h2 className="visually-hidden">Our Models</h2>
@@ -16,8 +26,10 @@ const HomeModels = () => {
 
         <div className="home-models-cards-container flex-column">
           <>
-            {models.map((model: ModelType, index: number) => (
-              <HomeModelCard key={index} model={model} />
+            {models?.map((model) => (
+              <div key={model?._id}>
+                <HomeModelCard model={model} />
+              </div>
             ))}
 
             <StyledLink path="/models" label="View All Models" />

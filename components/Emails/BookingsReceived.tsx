@@ -10,17 +10,17 @@ import {
   Heading,
 } from "@react-email/components";
 
-interface BookingsProps {
+interface BookingsReceivedProps {
   clientName: string;
   modelName: string;
   bookingDate: string;
 }
 
-export default function Bookings({
+export default function BookingsReceived({
   clientName,
   modelName,
   bookingDate,
-}: BookingsProps) {
+}: BookingsReceivedProps) {
   return (
     <Html>
       <Head />

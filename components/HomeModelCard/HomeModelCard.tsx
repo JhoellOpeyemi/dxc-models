@@ -1,14 +1,22 @@
 import Image from "next/image";
-
-import type { ModelType } from "@/data/models";
+import { urlFor } from "@/sanity/lib/image";
+import { Model } from "@/sanity/types";
 
 import "./homeModelCard.css";
 
-const HomeModelCard = ({ model }: { model: ModelType }) => {
+const HomeModelCard = ({ model }: { model: Model }) => {
   return (
     <div className="home-model-card-container flex-column">
       <div className="home-model-image-container">
-        <Image src={model.image} alt="" className="home-model-image" fill />
+        {model.headshot && (
+          <Image
+            src={urlFor(model.headshot).auto("format").url()}
+            alt=""
+            className="home-model-image"
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            fill
+          />
+        )}
       </div>
 
       <div className="home-model-info-container">
@@ -20,10 +28,20 @@ const HomeModelCard = ({ model }: { model: ModelType }) => {
             <span className="stat-value">{model.height}</span>
           </li>
           <div className="stat-divider" />
-          <li className="model-stat">
-            <span className="stat-heading">Chest  — </span>
-            <span className="stat-value">{model.chest}</span>
-          </li>
+
+          {model.bust && (
+            <li className="model-stat">
+              <span className="stat-heading">Bust — </span>
+              <span className="stat-value">{model.bust}</span>
+            </li>
+          )}
+
+          {model.chest && (
+            <li className="model-stat">
+              <span className="stat-heading">Chest — </span>
+              <span className="stat-value">{model.chest}</span>
+            </li>
+          )}
         </ul>
       </div>
     </div>

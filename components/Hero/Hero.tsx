@@ -19,7 +19,13 @@ const Hero = () => {
               <StyledLink path="/academy" label="View our academy" />
             </div>
             <div className="hero-image-container">
-              <Image src="/hero-img.png" alt="" fill className="hero-image" />
+              <Image 
+                src="/hero-img.png"
+                alt="" 
+                className="hero-image" 
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                fill
+            />
             </div>
           </div>
 
