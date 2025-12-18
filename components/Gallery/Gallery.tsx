@@ -1,14 +1,13 @@
-import type {GalleryType} from '@/components/ModelDetails/ModelDetails'
 import MediaCard from '@/components/MediaCard/MediaCard'
 
 import "./gallery.css";
 
-const Gallery = ({gallery} : GalleryType) => {
+const Gallery = ({images} : {images: string[]}) => {
 
   return (
     <section className="gallery-section-container">
         <div className='gallery-media-container'>
-        {gallery.map((image: string, index:number) => (
+        {images.map((image: string, index:number) => (
             <MediaCard image={image} key={index} />
         ))}
         </div>

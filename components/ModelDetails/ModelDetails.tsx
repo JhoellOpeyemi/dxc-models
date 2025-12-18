@@ -1,22 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import { useModelDetails } from "@/sanity/lib/hooks";
+import { Model } from "@/sanity/types";
 
-import type { ModelType } from "@/data/models";
 import Gallery from "@/components/Gallery/Gallery";
 import BookingForm from "@/components/BookingForm/BookingForm";
 
 import "./modelDetails.css";
 
-export type GalleryType = Pick<ModelType, "gallery">;
-
-const ModelDetails = ({ model }: { model: ModelType }) => {
+const ModelDetails = ({ slug }: { slug: string }) => {
+  const { data: model, isLoading, error } = useModelDetails(slug);
   const [isBookingModal, setIsBookingModal] = useState<boolean>(false);
 
   const firstNameOfModel = model?.name.split(" ")[0];
 
+  if (isLoading) return <p>Loading Models...</p>;
+  if (error) return <p>Error loading models: {error.message}</p>;
+
   return (
     <section className="model-details-section-container">
+        <div className='model-details-section'>
       <div className="model-details-content">
         <h1 className="model-name">{model.name}</h1>
 
@@ -26,10 +30,37 @@ const ModelDetails = ({ model }: { model: ModelType }) => {
             <span className="stat-value">{model.height}</span>
           </p>
           <div className="stat-divider" />
-          <p className="model-stat">
-            <span className="stat-heading">Chest — </span>
-            <span className="stat-value">{model.chest}</span>
-          </p>
+            {model.gender == 'female' && 
+            <>
+                <p className="model-stat">
+                    <span className="stat-heading">Bust — </span>
+                    <span className="stat-value">{model.bust}</span>
+                </p>
+                <div className="stat-divider" />
+                <p className="model-stat">
+                    <span className="stat-heading">Hips — </span>
+                    <span className="stat-value">{model.hips}</span>
+                </p>
+                <div className="stat-divider" />
+                <p className="model-stat">
+                    <span className="stat-heading">Dress — </span>
+                    <span className="stat-value">{model.dress}</span>
+                </p>
+                </>
+            }
+          {model.gender == 'male' && 
+          <>
+                <p className="model-stat">
+                    <span className="stat-heading">Chest — </span>
+                    <span className="stat-value">{model.chest}</span>
+                </p>
+                <div className="stat-divider" />
+                <p className="model-stat">
+                    <span className="stat-heading">Inseam — </span>
+                    <span className="stat-value">{model.inseam}</span>
+                </p>
+                </>
+            }
           <div className="stat-divider" />
           <p className="model-stat">
             <span className="stat-heading">Waist — </span>
@@ -47,20 +78,23 @@ const ModelDetails = ({ model }: { model: ModelType }) => {
           </p>
           <div className="stat-divider" />
           <p className="model-stat">
-            <span className="stat-heading">Hips — </span>
-            <span className="stat-value">{model.hips}</span>
+            <span className="stat-heading">Shoe — </span>
+            <span className="stat-value">{model.shoe}</span>
           </p>
         </div>
       </div>
 
-      <Gallery gallery={model.gallery} />
+      <Gallery images={model.gallery} />
 
-      <button
-        className={`${isBookingModal ? "link book-model-btn disabled" : "book-model-btn"}`}
-        onClick={() => setIsBookingModal(true)}
-      >
-        (Book {firstNameOfModel})
-      </button>
+        <div className='book-model-btn-container'>
+            <button
+            className={`${isBookingModal ? "link book-model-btn disabled" : "book-model-btn"}`}
+            onClick={() => setIsBookingModal(true)}
+            >
+            (Book {firstNameOfModel})
+            </button>
+        </div>
+    </div>
 
       {isBookingModal && (
         <BookingForm

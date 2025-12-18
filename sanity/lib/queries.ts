@@ -22,6 +22,7 @@ export const HOME_MODELS_QUERY = defineQuery(
         _updatedAt,
         _rev,
         name,
+        "slug": slug.current,
         headshot,
         height,
         bust,
@@ -37,6 +38,7 @@ export const MODELS_QUERY = defineQuery(
         _updatedAt,
         _rev,
         name,
+        "slug": slug.current,
         headshot,
         height,
         waist,
@@ -48,5 +50,30 @@ export const MODELS_QUERY = defineQuery(
         dress,
         chest,
         inseam,
+    }`
+);
+
+export const MODEL_DETAILS_QUERY = defineQuery(
+  `*[_type =='model' && slug.current == $slug][0] {
+        _id,
+        _type,
+        _createdAt,
+        _updatedAt,
+        _rev,
+        name,
+        "slug": slug.current,
+        headshot,
+        height,
+        waist,
+        eyes,
+        hair,
+        shoe,
+        bust,
+        hips,
+        dress,
+        chest,
+        inseam,
+        "gallery": gallery[].asset->url,
+        gender
     }`
 );

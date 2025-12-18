@@ -16,7 +16,7 @@ interface BookingsReceivedProps {
   bookingDate: string;
 }
 
-export default function BookingsReceived({
+export function BookingsReceived({
   clientName,
   modelName,
   bookingDate,

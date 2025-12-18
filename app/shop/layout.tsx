@@ -8,7 +8,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
+export default function ShopLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -1,9 +1,11 @@
 .gallery-section-container {
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
 }
 
 .gallery-media-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    aspect-ratio: 1.2 / 1;
     gap: calc(var(--gap) * 1.2);
 }

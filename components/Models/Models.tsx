@@ -8,8 +8,6 @@ import "./models.css";
 const Models = () => {
   const { data: allModels, isLoading, error } = useModels();
 
-  console.log(allModels);
-
   if (isLoading) return <p>Loading Models...</p>;
   if (error) return <p>Error loading models: {error.message}</p>;
 
