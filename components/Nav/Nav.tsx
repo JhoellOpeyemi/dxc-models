@@ -1,56 +1,48 @@
 "use client";
 
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./nav.css";
-import StyledLink from "../StyledLink/StyledLink";
+import StyledLink from "@/components/StyledLink/StyledLink";
+import { linkArray } from "@/utils";
 
 const Nav = () => {
   const pathname = usePathname();
   const isStudioPage = pathname?.startsWith("/studio");
 
-  const [isVisible, setIsVisible] = useState(true)
-  const [prevScrollPos, setPrevScrcollPos] = useState(0)
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-        const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.pageYOffset;
 
-        if (prevScrollPos > currentScrollPos) {
-            setIsVisible(true)
-        } else {
-            setIsVisible(false)
-        }
-        // setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos > 50)
-        setPrevScrcollPos(currentScrollPos)
-    }
+      if (prevScrollPos > currentScrollPos) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      // setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos > 50)
+      setPrevScrollPos(currentScrollPos);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-  
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [prevScrollPos])
-  
-
-  const linkArray = [
-    { path: "/about", label: "About us" },
-    { path: "/models", label: "Models" },
-    { path: "/academy", label: "Academy" },
-    { path: "/apply", label: "Apply" },
-    { path: "/shop", label: "Shop" },
-    { path: "/blog", label: "Blog" },
-    { path: "/contact", label: "Contact" },
-  ];
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
     <>
       {isStudioPage ? (
         <div></div>
       ) : (
-        <header className={`header flex-between container ${isVisible ? 'show-header' : 'hide-header'}`}>
+        <header
+          className={`header flex-between container ${isVisible ? "show-header" : "hide-header"}`}
+        >
           <Link href="/" className="logo">
             DXC
           </Link>

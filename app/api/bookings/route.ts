@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
+import BookingsReceived from "@/components/Emails/BookingsReceived";
 
-import { BookingsReceived } from "@/components/Emails/BookingsReceived";
+const apiKey = process.env.RESEND_API_KEY;
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("" + apiKey + "");
 
 export const bookingSchema = z.object({
   modelName: z.string().min(1, "Model name is required"),
@@ -19,19 +20,14 @@ export async function POST(req: Request) {
     const body = await req.json();
     const validatedData = bookingSchema.parse(body);
 
-    const { modelName, clientName, email, eventDate, message } = validatedData;
+    const { modelName, clientName, email, eventDate } = validatedData;
 
-    // Send email notification
-    const { data, error } = await resend.emails.send({
-      from: "DXC Models <bookings@dxcmodels.com>", // Update with your verified domain
-      to: [email], // Send to the client
-      subject: `Booking Confirmation for ${modelName}`,
-      react: BookingsReceived({
-        clientName,
-        modelName,
-        eventDate,
-        message,
-      }),
+    // Send email to client
+    const { error } = await resend.emails.send({
+      from: "Test <onboarding@resend.dev>",
+      to: [email],
+      subject: "Booking Request Received - DXC Models",
+      react: BookingsReceived({ clientName, modelName, eventDate }),
     });
 
     if (error) {
@@ -48,7 +44,10 @@ export async function POST(req: Request) {
     );
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: error.errors }, { status: 400 });
+      return NextResponse.json(
+        { error: error.issues.map((e) => e.message).join(", ") },
+        { status: 400 }
+      );
     }
     console.error("Unexpected error:", error);
     return NextResponse.json(

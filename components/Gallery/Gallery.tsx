@@ -1,16 +1,25 @@
-import MediaCard from '@/components/MediaCard/MediaCard'
+import MediaCard from "@/components/MediaCard/MediaCard";
+import { urlFor } from "@/sanity/lib/image";
+import { Model } from "@/sanity/types";
 
 import "./gallery.css";
 
-const Gallery = ({images} : {images: string[]}) => {
+const Gallery = ({ images }: { images?: Model["gallery"] }) => {
+  const safeImages = images ?? [];
 
   return (
     <section className="gallery-section-container">
-        <div className='gallery-media-container'>
-        {images.map((image: string, index:number) => (
-            <MediaCard image={image} key={index} />
-        ))}
-        </div>
+      <div className="gallery-media-container">
+        {safeImages.map((image, index: number) => {
+          const imageUrl =
+            typeof image === "string"
+              ? image
+              : // use sanity url builder for image objects
+                urlFor(image).auto("format").url();
+
+          return <MediaCard image={imageUrl} key={index} />;
+        })}
+      </div>
     </section>
   );
 };

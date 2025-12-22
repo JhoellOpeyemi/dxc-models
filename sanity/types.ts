@@ -295,7 +295,7 @@ export type MODELS_QUERYResult = Array<{
   inseam: number | null;
 }>;
 // Variable: MODEL_DETAILS_QUERY
-// Query: *[_type =='model' && slug.current == $slug][0] {        _id,        _type,        _createdAt,        _updatedAt,        _rev,        name,        "slug": slug.current,        headshot,        height,        waist,        eyes,        hair,        shoe,        bust,        hips,        dress,        chest,        inseam,        "gallery": gallery[].asset->url    }
+// Query: *[_type =='model' && slug.current == $slug][0] {        _id,        _type,        _createdAt,        _updatedAt,        _rev,        name,        "slug": slug.current,        headshot,        height,        waist,        eyes,        hair,        shoe,        bust,        hips,        dress,        chest,        inseam,        "gallery": gallery[].asset->url,        gender    }
 export type MODEL_DETAILS_QUERYResult = {
   _id: string;
   _type: "model";
@@ -327,6 +327,7 @@ export type MODEL_DETAILS_QUERYResult = {
   chest: number | null;
   inseam: number | null;
   gallery: Array<string | null> | null;
+  gender: "female" | "male" | null;
 } | null;
 
 // Query TypeMap
@@ -336,6 +337,6 @@ declare module "@sanity/client" {
     "*[_type =='blog' && defined(slug.current)] | order(_createdAt desc){\n        _id,\n        _type,\n        _createdAt,\n        _updatedAt,\n        _rev,\n        date,\n        image,\n        title,\n        introduction\n    }": BLOGS_QUERYResult;
     "*[_type =='model' && defined(slug.current) && tag == 'top'] | order(_createdAt desc) {\n        _id,\n        _type,\n        _createdAt,\n        _updatedAt,\n        _rev,\n        name,\n        \"slug\": slug.current,\n        headshot,\n        height,\n        bust,\n        chest\n    }": HOME_MODELS_QUERYResult;
     "*[_type =='model' && defined(slug.current)] | order(_createdAt) {\n        _id,\n        _type,\n        _createdAt,\n        _updatedAt,\n        _rev,\n        name,\n        \"slug\": slug.current,\n        headshot,\n        height,\n        waist,\n        eyes,\n        hair,\n        shoe,\n        bust,\n        hips,\n        dress,\n        chest,\n        inseam,\n    }": MODELS_QUERYResult;
-    "*[_type =='model' && slug.current == $slug][0] {\n        _id,\n        _type,\n        _createdAt,\n        _updatedAt,\n        _rev,\n        name,\n        \"slug\": slug.current,\n        headshot,\n        height,\n        waist,\n        eyes,\n        hair,\n        shoe,\n        bust,\n        hips,\n        dress,\n        chest,\n        inseam,\n        \"gallery\": gallery[].asset->url\n    }": MODEL_DETAILS_QUERYResult;
+    "*[_type =='model' && slug.current == $slug][0] {\n        _id,\n        _type,\n        _createdAt,\n        _updatedAt,\n        _rev,\n        name,\n        \"slug\": slug.current,\n        headshot,\n        height,\n        waist,\n        eyes,\n        hair,\n        shoe,\n        bust,\n        hips,\n        dress,\n        chest,\n        inseam,\n        \"gallery\": gallery[].asset->url,\n        gender\n    }": MODEL_DETAILS_QUERYResult;
   }
 }

@@ -4,23 +4,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import StyledLink from "../StyledLink/StyledLink";
+import StyledLink from "@/components/StyledLink/StyledLink";
+import { linkArray } from "@/utils";
 
 import "./footer.css";
 
 const Footer = () => {
   const pathname = usePathname();
   const isStudioPage = pathname?.startsWith("/studio");
-
-  const linkArray = [
-    { path: "/about", label: "About us" },
-    { path: "/models", label: "Models" },
-    { path: "/academy", label: "Academy" },
-    { path: "/apply", label: "Apply" },
-    { path: "/shop", label: "Shop" },
-    { path: "/blog", label: "Blog" },
-    { path: "/contact", label: "Contact" },
-  ];
 
   return (
     <>
@@ -59,10 +50,10 @@ const Footer = () => {
 
               <div className="footer-image-container">
                 <Image
-                  src="/hero-img.png"
+                  src="/hero-img.webp"
                   alt=""
                   className="footer-image"
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   fill
                 />
               </div>

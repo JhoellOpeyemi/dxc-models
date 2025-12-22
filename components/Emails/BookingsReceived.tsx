@@ -13,13 +13,13 @@ import {
 interface BookingsReceivedProps {
   clientName: string;
   modelName: string;
-  bookingDate: string;
+  eventDate: string;
 }
 
-export function BookingsReceived({
+export default function BookingsReceived({
   clientName,
   modelName,
-  bookingDate,
+  eventDate,
 }: BookingsReceivedProps) {
   return (
     <Html>
@@ -38,7 +38,7 @@ export function BookingsReceived({
             <Text style={styles.text}>
               Thank you for reaching out to <strong>DXC Models</strong>.
               We&apos;ve received your booking request for{" "}
-              <strong>{modelName}</strong> on <strong>{bookingDate}</strong>.
+              <strong>{modelName}</strong> on <strong>{eventDate}</strong>.
             </Text>
 
             <Text style={styles.text}>
@@ -55,7 +55,7 @@ export function BookingsReceived({
             </Text>
 
             <Text style={styles.text}>
-              We appreciate your truest in DXC Models and look forward to making
+              We appreciate your trust in DXC Models and look forward to making
               your project a success.
             </Text>
 

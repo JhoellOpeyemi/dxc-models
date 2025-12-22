@@ -1,7 +1,8 @@
 import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {bookingSchema} from '@/app/api/bookings/route'
+import { useState } from "react";
+import { bookingSchema } from "@/app/api/bookings/route";
 
 import FormBtn from "@/components/FormBtn/FormBtn";
 
@@ -11,17 +12,54 @@ export type BookingFormData = z.infer<typeof bookingSchema>;
 
 interface BookingFormProps {
   closeBookingModal: () => void;
-  modelName: string;
+  modelName: string | undefined;
 }
 
 const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
-  const { register, handleSubmit } = useForm<BookingFormData>({
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<BookingFormData>({
     defaultValues: { modelName: modelName },
     resolver: zodResolver(bookingSchema),
   });
 
-  const onSubmit: SubmitHandler<BookingFormData> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<BookingFormData> = async (data) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        // Optionally close modal after a delay
+        setTimeout(() => {
+          closeBookingModal();
+        }, 2000);
+      } else {
+        const errorData = await response.json();
+        setSubmitError(
+          errorData.error || "An error occurred while submitting the booking."
+        );
+      }
+    } catch (error) {
+      setSubmitError("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -37,6 +75,13 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
             (X)
           </button>
 
+          {submitError && <div className="error-message">{submitError}</div>}
+          {submitSuccess && (
+            <div className="success-message">
+              Booking submitted successfully!
+            </div>
+          )}
+
           <div className="input-group-container">
             <div className="input-group">
               <label htmlFor="modelName" className="styled-input-label">
@@ -49,6 +94,9 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
                 className="styled-input"
                 readOnly
               />
+              {errors.modelName && (
+                <span className="field-error">{errors.modelName.message}</span>
+              )}
             </div>
 
             <div className="input-group">
@@ -62,6 +110,9 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
                 className="styled-input"
                 placeholder="John Doe"
               />
+              {errors.clientName && (
+                <span className="field-error">{errors.clientName.message}</span>
+              )}
             </div>
           </div>
 
@@ -77,6 +128,9 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
                 className="styled-input"
                 placeholder="example@gmail.com"
               />
+              {errors.email && (
+                <span className="field-error">{errors.email.message}</span>
+              )}
             </div>
 
             <div className="input-group">
@@ -89,6 +143,9 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
                 id="eventDate"
                 className="styled-input"
               />
+              {errors.eventDate && (
+                <span className="field-error">{errors.eventDate.message}</span>
+              )}
             </div>
           </div>
 
@@ -102,9 +159,15 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
               className="styled-textarea"
               placeholder="Type your message here..."
             />
+            {errors.message && (
+              <span className="field-error">{errors.message.message}</span>
+            )}
           </div>
 
-          <FormBtn label="Send Booking Request" />
+          <FormBtn
+            label={isSubmitting ? "Submitting" : "Send Booking Request"}
+            disabled={isSubmitting}
+          />
         </form>
       </section>
     </>

@@ -19,13 +19,14 @@ const Hero = () => {
               <StyledLink path="/academy" label="View our academy" />
             </div>
             <div className="hero-image-container">
-              <Image 
-                src="/hero-img.png"
-                alt="" 
-                className="hero-image" 
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              <Image
+                src="/hero-img.webp"
+                alt=""
+                className="hero-image"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 fill
-            />
+                priority
+              />
             </div>
           </div>
 

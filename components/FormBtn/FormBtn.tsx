@@ -1,9 +1,15 @@
 import "./formBtn.css";
 
-const FormBtn = ({ label }: { label: string }) => {
+const FormBtn = ({
+  label,
+  disabled,
+}: {
+  label: string;
+  disabled?: boolean;
+}) => {
   return (
     <div className="form-btn-container">
-      <button type="submit" className="form-btn">
+      <button type="submit" className="form-btn" disabled={disabled}>
         (<span>{label}</span>)
       </button>
     </div>

@@ -8,9 +8,9 @@
 
 .booking-form-container {
   position: fixed;
-  bottom: 4rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: min(60%, 35rem);
   z-index: 5;
 }
@@ -44,4 +44,23 @@
 
 .booking-form-container .form-btn {
   font-size: var(--sm-button);
+}
+
+.error-message {
+  color: var(--color-lighter-text);
+  margin-bottom: 1rem;
+  font-size: var(--sm-text);
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 1rem;
+  font-size: var(--sm-text);
+}
+
+.field-error {
+  color: var(--color-lighter-text);
+  font-size: var(--xs-text);
+  margin-top: 0.25rem;
+  display: block;
 }
