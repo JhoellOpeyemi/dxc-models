@@ -1,0 +1,7 @@
+.models-list-container {
+  display: flex;
+  gap: var(--gap);
+  margin-top: 4rem;
+  padding: 0 5%;
+  overflow-x: auto;
+}

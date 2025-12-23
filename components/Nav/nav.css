@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  mix-blend-mode: difference;
+  color: var(--color-mix);
+  z-index: 3;
+  transition: transform 0.25s linear;
+}
+
+.show-header {
+    transform: translateY(0) translateX(-50%);
+}
+
+.hide-header {
+    transform: translateY(calc((-100% - 1.5rem))) translateX(-50%);
+}
+
+.logo {
+  font-size: var(--text);
+  font-weight: 600;
+}
+
+.nav-container {
+  gap: calc(var(--gap) * 2.4);
+}
+
+.nav-container .link {
+  font-size: var(--text);
+}
+
+.nav-link svg {
+  width: 24;
+  height: 24;
+}

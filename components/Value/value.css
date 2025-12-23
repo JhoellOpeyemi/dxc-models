@@ -1,0 +1,28 @@
+.value-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.value-image-container {
+  position: relative;
+  width: 50%;
+  height: 34.375rem;
+}
+
+.value-image {
+  object-fit: cover;
+}
+
+.value-text-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.value-text-container a {
+  font-size: var(--button);
+  font-weight: 700;
+}

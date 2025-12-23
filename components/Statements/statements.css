@@ -1,0 +1,29 @@
+.vision-mission-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.vision {
+  width: 30%;
+}
+
+.statement-separator {
+  position: relative;
+  width: 0.125rem;
+  background-color: var(--color-light-text);
+}
+
+.mission {
+  width: 50%;
+}
+
+.statement-heading {
+  font-size: var(--heading);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.statement-text:not(:last-child) {
+  margin-bottom: 1rem;
+}

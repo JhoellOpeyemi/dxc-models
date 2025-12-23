@@ -1,0 +1,17 @@
+.styled-select-container {
+  width: 50%;
+}
+
+.styled-select {
+  width: 100%;
+  padding: 0.35rem;
+  text-transform: capitalize;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-lighter-text);
+  border-bottom: 2px solid var(--color-lighter-text);
+}
+
+.styled-select option {
+  text-transform: capitalize;
+}

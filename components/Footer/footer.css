@@ -1,0 +1,76 @@
+.footer-container {
+  background-color: var(--color-footer-bg);
+  color: var(--color-lighter-text);
+  margin-top: 7rem;
+  overflow: hidden;
+}
+
+.footer-inner-content-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin: 4.5rem 0 6rem;
+}
+
+.footer-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 1.6);
+}
+
+.info-heading {
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.contact p {
+  margin-top: 0.7rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.footer-links .link {
+    font-size: 0.9rem;
+}
+
+.footer-image-container {
+  position: relative;
+  width: 15.5rem;
+  height: 15.5rem;
+}
+
+.footer-image {
+  object-fit: cover;
+}
+
+.socials-brand-container {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 0.4);
+}
+
+.social-links-container {
+  display: flex;
+  gap: calc(var(--gap) * 2);
+}
+
+.social-links-container a {
+  z-index: 3;
+}
+
+.footer-brand {
+  text-transform: uppercase;
+  font-size: var(--xl-heading);
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.brand-models {
+  -webkit-text-stroke: 1px var(--color-lighter-text);
+  -webkit-text-fill-color: transparent;
+}

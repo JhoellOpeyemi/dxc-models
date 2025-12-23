@@ -1,0 +1,40 @@
+.models-heading-filter {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 1);
+  width: max-content;
+}
+
+.models-filter-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.models-filter-btn {
+  background: none;
+  border: none;
+  font-size: var(--text);
+  color: var(--color-light-text);
+  transition:
+    font-weight 0.3s,
+    color 0.3s;
+}
+
+.models-filter-btn.active {
+  font-weight: 600;
+  color: var(--color-primary);
+  transition:
+    font-weight 0.3s,
+    color 0.3s;
+}
+
+.filter-number {
+  display: inline-block;
+  margin-left: 0.2rem;
+}
+
+.models-subheading {
+  width: 40%;
+}

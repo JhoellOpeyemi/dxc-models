@@ -1,0 +1,29 @@
+.home-model-card-container {
+  gap: calc(var(--gap) * 1.2);
+  align-items: center;
+  text-align: center;
+}
+
+.home-model-image-container {
+  position: relative;
+  width: 16rem;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.home-model-image {
+  object-fit: cover;
+}
+
+.home-model-name {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+.form-success-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: calc(var(--gap) * 0.8);
+  padding: 4rem 2rem;
+  background-color: var(--color-mix);
+  pointer-events: none;
+}
+
+.form-success-icon {
+    font-size: 4rem;
+}
+
+.form-success-icon path {
+    fill: var(--color-primary);
+}
+
+.form-success-message {
+  font-size: var(--l-text);
+  font-weight: 500;
+}

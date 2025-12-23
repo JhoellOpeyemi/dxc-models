@@ -1,0 +1,72 @@
+.model-details-section-container {
+  position: relative;
+  padding-top: 20vh;
+}
+
+.model-details-section {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--gap) * 2.4);
+}
+
+.model-details-content-container {
+  position: sticky;
+  top: 20vh;
+  width: 35%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-to-models-link {
+  margin-bottom: calc(var(--gap) * 1.6);
+}
+
+.model-details-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: calc(var(--gap) * 4.8);
+}
+
+.model-name {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: var(--heading);
+  word-spacing: 0.5rem;
+  letter-spacing: -2px;
+  width: 100%;
+}
+
+.model-details-content .model-stats-container {
+  justify-content: flex-start;
+  margin-top: 3rem;
+}
+
+.book-model-btn-container {
+  position: sticky;
+  top: 20vh;
+  display: flex;
+  height: 75vh;
+  width: max-content;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.book-model-btn {
+  /* position: sticky;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%); */
+  font-weight: 700;
+  font-size: var(--button);
+  color: var(--color-text);
+}
+
+.book-model-btn.disabled {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}

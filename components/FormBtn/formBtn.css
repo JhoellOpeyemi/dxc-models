@@ -1,0 +1,25 @@
+.form-btn-container {
+  width: 50%;
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-btn {
+  font-size: var(--button);
+  font-weight: 700;
+  color: var(--color-lighter-text);
+}
+
+.form-btn.submitting {
+    animation: submitAnim 1.25s linear infinite alternate;
+}
+
+@keyframes submitAnim {
+    from {
+        opacity: 0.3;
+    } to {
+        opacity: 1;
+    }
+}
