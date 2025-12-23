@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import Providers from '@/app/providers'
+import Providers from "@/app/providers";
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
 import Lenis from "./lenis";
 
 import "./globals.css";
 import "../styles/utils.css";
-import 'easymde/dist/easymde.min.css'
+import "easymde/dist/easymde.min.css";
 
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 const montserrat = localFont({
   src: [
@@ -95,9 +95,7 @@ export default function RootLayout({
       <body>
         <Lenis>
           <Nav />
-          <Providers>
-            {children}
-          </Providers>
+          <Providers>{children}</Providers>
           <Footer />
         </Lenis>
       </body>

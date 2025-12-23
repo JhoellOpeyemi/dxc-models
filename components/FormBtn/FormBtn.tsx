@@ -9,7 +9,11 @@ const FormBtn = ({
 }) => {
   return (
     <div className="form-btn-container">
-      <button type="submit" className={`${disabled ? 'form-btn submitting' : 'form-btn'}`} disabled={disabled}>
+      <button
+        type="submit"
+        className={`${disabled ? "form-btn submitting" : "form-btn"}`}
+        disabled={disabled}
+      >
         (<span>{label}</span>)
       </button>
     </div>
