@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Model } from "@/sanity/types";
@@ -6,16 +8,44 @@ import { formatIndex } from "@/utils";
 
 import "./modelCard.css";
 
-const ModelCard = ({ model, index }: { model: Model; index: number }) => {
+interface ModelCardProps {
+  model: Model;
+  index: number;
+  setModelName?: React.Dispatch<React.SetStateAction<string>>;
+  onMouseLeave?: () => void;
+  onHover?: (index: number) => void;
+  isActive?: boolean;
+}
+
+const ModelCard = ({
+  model,
+  index,
+  setModelName,
+  onMouseLeave,
+  onHover,
+  isActive,
+}: ModelCardProps) => {
+  const handleModelHover = () => {
+    // this updates the modelName state in Models.tsx when you hover a model card
+    if (setModelName) {
+      setModelName(model?.name || "");
+    }
+    if (onHover) onHover(index);
+  };
+
   return (
     <>
-      <li className="model-card-container">
+      <li className={`model-card-container ${isActive ? "active" : ""}`}>
         <p className="model-index">{formatIndex(index)}</p>
 
         <Link
           href={`/models/${model.slug}`}
           className="model-card-link"
           aria-label={`View ${model.name}'s profile`}
+          onMouseEnter={handleModelHover}
+          onMouseLeave={() => {
+            if (onMouseLeave) onMouseLeave();
+          }}
         >
           <div className="model-card-image-container">
             {model.headshot && (
@@ -32,7 +62,6 @@ const ModelCard = ({ model, index }: { model: Model; index: number }) => {
         </Link>
       </li>
 
-      <h3 className="model-name-preview">{model.name}</h3>
       {/* <div className="model-stat-container">
         <p className="model-stat">
           <span className="stat-heading">Chest  — </span>

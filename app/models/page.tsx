@@ -1,36 +1,38 @@
+// libraries and hooks imports
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
 import { getQueryClient } from "@/app/get-query-client";
 import { prefetchModels } from "@/sanity/lib/prefetch";
 
+// context imports
 import { ModelsProvider } from "@/components/Models/ModelsProvider";
-import { AnimationProvider } from "@/components/ModelsPageAnimation/AnimationProvider";
+import { AnimationProvider } from "@/components/Models/Animation/AnimationProvider";
 
+// components imports
 import ModelsHeading from "@/components/ModelsHeading/ModelsHeading";
 import Models from "@/components/Models/Models";
 
 const modelMain: React.CSSProperties = {
-  height: "100vh",
-  minHeight: "100svh",
+  height: "85vh",
+  minHeight: "85svh",
   position: "relative",
-  paddingTop: "13vh",
 };
 export default async function ModelsPage() {
+  // prefetch data on server for hydration
   const queryClient = getQueryClient();
-
   await prefetchModels(queryClient);
 
   return (
-    <main style={modelMain}>
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <ModelsProvider>
-          <AnimationProvider>
+    <AnimationProvider>
+      <main style={modelMain}>
+        <HydrationBoundary state={dehydrate(queryClient)}>
+          <ModelsProvider>
             <div className="container">
               <ModelsHeading />
             </div>
             <Models />
-          </AnimationProvider>
-        </ModelsProvider>
-      </HydrationBoundary>
-    </main>
+          </ModelsProvider>
+        </HydrationBoundary>
+      </main>
+    </AnimationProvider>
   );
 }

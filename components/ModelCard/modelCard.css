@@ -12,14 +12,3 @@
 .model-card-image {
   object-fit: cover;
 }
-
-.model-name-preview {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: var(--md-heading);
-  font-weight: 700;
-  text-align: center;
-  /* text-transform: uppercase; */
-}

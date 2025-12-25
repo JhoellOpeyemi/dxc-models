@@ -150,3 +150,13 @@
   width: fit-content;
   /* gap: 0.5rem; */
 }
+
+/* split text styles */
+.word,
+.char {
+  display: inline-block;
+}
+
+.word:not(:last-child) {
+  margin-right: 1rem;
+}

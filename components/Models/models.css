@@ -1,7 +1,38 @@
+.models-section-container {
+  margin-top: 4rem;
+}
+
 .models-list-container {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.model-card-wrapper {
   display: flex;
   gap: var(--gap);
-  margin-top: 4rem;
   padding: 0 5%;
-  overflow-x: auto;
+  width: max-content;
+}
+
+.model-name-preview {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--md-heading);
+  font-weight: 700;
+  text-align: center;
+  width: max-content;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  /* overflow: hidden; */
+  pointer-events: none;
+}
+
+.model-name-preview .word {
+  overflow: hidden;
+}
+
+.model-name-preview .char {
+  transform: translateY(100%);
 }

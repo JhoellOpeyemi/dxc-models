@@ -102,3 +102,7 @@ button {
   font-family: var(--font-montserrat), sans-serif;
   line-height: 1;
 }
+
+span {
+  display: inline-block;
+}

@@ -16,7 +16,7 @@
   background: none;
   border: none;
   font-size: var(--text);
-  color: var(--color-light-text);
+  color: var(--color-text);
   transition:
     font-weight 0.3s,
     color 0.3s;

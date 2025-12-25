@@ -1,6 +1,7 @@
 "use client";
 
 import { useModelsContext } from "@/components/Models/ModelsProvider";
+import SplitText from "@/components/SplitText";
 
 import "./modelsHeading.css";
 
@@ -10,7 +11,10 @@ const ModelsHeading = () => {
   return (
     <div className="models-heading-container">
       <div className="models-heading-filter">
-        <h1 className="models-heading page-heading">Our Models</h1>
+        <h1 className="models-heading page-heading">
+          <SplitText text="Our Models" splitType="words" />
+        </h1>
+
         <div className="models-filter-container">
           <button
             className={`models-filter-btn ${filter === "all" ? "active" : ""}`}
