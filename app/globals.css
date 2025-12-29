@@ -17,7 +17,7 @@
   --xxl-heading: 22.5rem; /* max 22.5rem */
   --xl-heading: 10rem; /* max 10rem */
   --l-heading: 7rem; /* max 7rem */
-  --md-heading: 5rem; /* max 5rem */
+  --md-heading: clamp(2rem, 7vw, 5rem); /* max 5rem */
   --heading: 3rem; /* max 3rem */
   --sm-heading: 2.5rem; /* max 2.5rem */
   --page-heading: 4rem;

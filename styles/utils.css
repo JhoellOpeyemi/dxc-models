@@ -151,6 +151,12 @@
   /* gap: 0.5rem; */
 }
 
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-overlay);
+}
+
 /* split text styles */
 .word,
 .char {

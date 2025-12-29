@@ -12,12 +12,13 @@ const Hero = () => {
           We shape talents <br /> into global icons
         </h1>
 
-        <div className="hero-content-container">
-          <div className="hero-image-cta">
+        <div className="hero-content-container flex-column">
             <div className="cta-container flex-between">
               <StyledLink path="/apply" label="Become a model" />
               <StyledLink path="/academy" label="View our academy" />
             </div>
+
+          <div className="hero-image-subtitle-container">
             <div className="hero-image-container">
               <Image
                 src="/hero-img.webp"
@@ -27,13 +28,14 @@ const Hero = () => {
                 fill
                 priority
               />
+              <div className='overlay'></div>
             </div>
-          </div>
 
-          <p className="hero-subtitle">
-            DXC Models is one of the most influential and trusted fashion talent
-            agencies in Sub-Saharan Africa, founded in Nigeria in 2019.
-          </p>
+            <p className="hero-subtitle">
+                DXC Models is one of the most influential and trusted fashion talent
+                agencies in Sub-Saharan Africa, founded in Nigeria in 2019.
+            </p>
+          </div>
         </div>
       </section>
     </>

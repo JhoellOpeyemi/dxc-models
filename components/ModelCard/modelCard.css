@@ -12,3 +12,21 @@
 .model-card-image {
   object-fit: cover;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  /* make the model card grayscale when hovered */
+  .model-card-wrapper:has(.model-card-link:hover)
+    .model-card-container:not(.active) {
+    filter: grayscale(100%) blur(2px);
+    transition: filter 1s ease;
+  }
+
+  .model-card-wrapper:has(.model-card-link:hover) .model-card-container.active {
+    filter: none;
+    transition: filter 1s ease;
+  }
+
+  .model-card-container {
+    transition: filter 1s ease;
+  }
+}

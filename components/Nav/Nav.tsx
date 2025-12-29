@@ -1,12 +1,18 @@
 "use client";
 
+// hooks imports
 import { useState, useEffect } from "react";
-
+import { useWindowSize } from "@/hooks";
+// next imports
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import "./nav.css";
+// component imports
 import StyledLink from "@/components/StyledLink/StyledLink";
+import MobileNav from "@/components/Nav/Mobile/MobileNav";
+// utils imports
 import { linkArray } from "@/utils";
+// styles import
+import "./nav.css";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -14,6 +20,9 @@ const Nav = () => {
 
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.width < 992;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +33,7 @@ const Nav = () => {
       } else {
         setIsVisible(false);
       }
-      // setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos > 50)
+
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -39,6 +48,8 @@ const Nav = () => {
     <>
       {isStudioPage ? (
         <div></div>
+      ) : isMobile ? (
+        <MobileNav />
       ) : (
         <header
           className={`header flex-between container ${isVisible ? "show-header" : "hide-header"}`}
