@@ -1,12 +1,16 @@
 import Link from "next/link";
 
 import "./styledLink.css";
-// import ArrowRight from "../ArrowRight";
 
-const StyledLink = ({ path, label }: { path: string; label: string }) => {
+interface StyledLinkProps {
+    path: string;
+    label: string;
+    closeNav?: () => void;
+}
+const StyledLink = ({ path, label, closeNav }: StyledLinkProps) => {
   return (
     <>
-      <Link href={path} className="link flex">
+      <Link href={path} className="link flex" onClick={closeNav}>
         (<span>{label}</span>)
       </Link>
     </>

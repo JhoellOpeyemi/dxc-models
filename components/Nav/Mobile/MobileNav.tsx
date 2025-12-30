@@ -7,8 +7,6 @@ import Image from "next/image";
 
 // components imports
 import StyledLink from "@/components/StyledLink/StyledLink";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 // utils imports
 import { linkArray } from "@/utils";
@@ -22,6 +20,10 @@ const MobileNav = () => {
     setNavOpen(!navOpen);
   };
 
+  const closeNav = () => {
+    setNavOpen(false)
+  }
+
   return (
     <>
       <header className="mobile-header flex-between">
@@ -29,13 +31,13 @@ const MobileNav = () => {
           DXC
         </Link>
 
-{navOpen && 
+        {navOpen && 
         <nav className="mobile-nav">
           <ul className="mobile-nav-container flex-column">
             {linkArray.map(
               ({ path, label }: { path: string; label: string }) => (
                 <li key={path} className="mobile-nav-list">
-                  <StyledLink path={path} label={label} />
+                  <StyledLink path={path} label={label} closeNav={closeNav} />
                 </li>
               )
             )}
@@ -68,17 +70,18 @@ const MobileNav = () => {
         </nav>
         }
 
+        <div className='time-container'>
+            <p className={`${navOpen ? "time nav-open" : "time"}`}>18:55</p>
+        </div>
+
         <div className="mobile-menu">
           <button
             className={`${navOpen ? "mobile-menu-btn nav-open" : "mobile-menu-btn"}`}
             onClick={handleNav}
             aria-label="Toggle navigation menu"
           >
-            {navOpen ? (
-              <FontAwesomeIcon icon={faXmark} />
-            ) : (
-              <FontAwesomeIcon icon={faBars} />
-            )}
+            <div className='mobile-menu-line mobile-menu-line-1'></div>
+            <div className='mobile-menu-line mobile-menu-line-2'></div>
           </button>
         </div>
       </header>

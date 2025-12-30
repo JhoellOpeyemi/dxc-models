@@ -5,9 +5,8 @@ import { usePathname } from "next/navigation";
 // hooks import
 import { useWindowSize } from "@/hooks";
 // components imports
-import DesktopFooter from '@/components/Footer/DesktopFooter/DesktopFooter'
-import MobileFooter from '@/components/Footer/MobileFooter/MobileFooter'
-
+import DesktopFooter from '@/components/Footer/Desktop/DesktopFooter'
+import MobileFooter from '@/components/Footer/Mobile/MobileFooter'
 
 const Footer = () => {
   const pathname = usePathname();
