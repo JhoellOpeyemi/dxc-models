@@ -1,28 +1,8 @@
-import Image from "next/image";
+import { brands } from "@/utils";
 
 import "./brands.css";
 
 const Brands = () => {
-  const brands = [
-    "Bolt",
-    "Puma",
-    "Salonpas",
-    "Skit Ng",
-    "Tecno",
-    "LYS Apparel",
-    "Fancy Africa",
-    "ShopRite",
-    "Fasha",
-    "Cowbell Milk",
-    "Zinni Luxury",
-    "Dang!",
-    "Xclusif",
-    "Desperados",
-    "Maestro Nigeria",
-    "Lost in Lagos",
-    "Ci Gusta",
-  ];
-
   return (
     <div className="brands-container">
       <div className="brands-text-container">
@@ -38,10 +18,11 @@ const Brands = () => {
       </div>
 
       <div className="brands-video-container">
-        <video className='brands-video' autoPlay muted loop playsInline>
-            <source src='/branding-vid.mp4' type='video/mp4' />
-            Your browser does not support the video tag
+        <video className="brands-video" autoPlay muted loop playsInline>
+          <source src="/branding-vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag
         </video>
+        <div className="overlay"></div>
       </div>
     </div>
   );

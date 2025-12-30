@@ -10,8 +10,6 @@ import "./homeModels.css";
 const HomeModels = () => {
   const { data: models, isLoading, error } = useHomeModels();
 
-  console.log(models);
-
   if (isLoading) return <p>Loading Models...</p>;
   if (error) return <p>Error loading models: {error.message}</p>;
 
@@ -20,7 +18,7 @@ const HomeModels = () => {
       <h2 className="visually-hidden">Our Models</h2>
 
       <div className="home-models-visual-details-container flex-between-start">
-        <h2 className="home-models-heading" aria-hidden="true">
+        <h2 className="home-models-heading our" aria-hidden="true">
           Our
         </h2>
 
@@ -36,7 +34,10 @@ const HomeModels = () => {
           </>
         </div>
 
-        <h2 className="home-models-heading flex-between" aria-hidden="true">
+        <h2
+          className="home-models-heading flex-between models"
+          aria-hidden="true"
+        >
           Models
         </h2>
       </div>

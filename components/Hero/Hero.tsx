@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import "./hero.css";
 
+import SplitText from '@/components/SplitText'
 import StyledLink from "@/components/StyledLink/StyledLink";
 
 const Hero = () => {
@@ -9,7 +10,12 @@ const Hero = () => {
     <>
       <section className="hero-container">
         <h1 className="hero-heading">
-          We shape talents <br /> into global icons
+        <div>
+            <SplitText text='We shape talents' splitType='words' />
+        </div>
+        <div>
+            <SplitText text='into global icons' splitType='words' />
+        </div>
         </h1>
 
         <div className="hero-content-container flex-column">

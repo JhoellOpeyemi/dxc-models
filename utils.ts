@@ -13,6 +13,26 @@ export const linkArray = [
   { path: "/contact", label: "Contact" },
 ];
 
+export const brands = [
+    "Bolt",
+    "Puma",
+    "Salonpas",
+    "Skit Ng",
+    "Tecno",
+    "LYS Apparel",
+    "Fancy Africa",
+    "ShopRite",
+    "Fasha",
+    "Cowbell Milk",
+    "Zinni Luxury",
+    "Dang!",
+    "Xclusif",
+    "Desperados",
+    "Maestro Nigeria",
+    "Lost in Lagos",
+    "Ci Gusta",
+  ];
+
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", {
     month: "long",

@@ -5,13 +5,17 @@
   height: max-content;
   display: flex;
   flex-direction: column;
-  gap: calc(var(--gap) * 2.4);
+  gap: calc(var(--gap) * 2);
 }
 
 .hero-heading {
   font-size: var(--md-heading);
   width: 80%;
   font-weight: 600;
+}
+
+.hero-heading .word:not(:last-child) {
+  margin-right: clamp(0.5rem, 2.5vw, 1.15rem);
 }
 
 .hero-content-container {
@@ -28,8 +32,8 @@
 }
 
 .hero-image-subtitle-container {
-    display: flex;
-    gap: var(--gap);
+  display: flex;
+  gap: var(--gap);
 }
 
 .hero-image-container {
@@ -43,68 +47,66 @@
 }
 
 .hero-subtitle {
-    align-self: flex-end;
+  align-self: flex-end;
   width: 20%;
 }
 
 @media screen and (max-width: 768px) {
-    .hero-container {
-        padding-top: 13vh;
-        gap: calc(var(--gap) * 1.2);
-    }
+  .hero-container {
+    padding-top: 13vh;
+    gap: calc(var(--gap) * 1.2);
+  }
 
-    .hero-heading {
-        width: 100%;
-        text-align: center;
-    }
+  .hero-heading {
+    width: 100%;
+    text-align: center;
+  }
 
-    .hero-content-container {
-        gap: calc(var(--gap) * 1.6);
-    }
+  .hero-content-container {
+    gap: calc(var(--gap) * 1.6);
+    flex-direction: column-reverse;
+  }
 
-    .hero-image-subtitle-container {
-        order: 2;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-    }
-    
-.hero-image-container {
-  position: relative;
-  height: min(65vh, 32rem);
-  width: 100%;
-}
+  .hero-image-subtitle-container {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
 
-    .hero-subtitle {
-        align-self: center;
-        text-align: center;
-        width: 100%;
-    }
+  .hero-image-container {
+    width: 100%;
+  }
 
-    .cta-container {
-        order: 3;
-        width: 80%;
-        flex-direction: column;
-        align-self: center;
-        gap: var(--gap);
-    }
+  .hero-subtitle {
+    align-self: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cta-container {
+    width: 80%;
+    flex-direction: column;
+    align-self: center;
+    gap: var(--gap);
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .hero-container {
-        padding-top: 12.5vh;
-        gap: calc(var(--gap) * 1.2);
-    }
+  .hero-container {
+    padding-top: 12.5vh;
+    gap: calc(var(--gap) * 1.2);
+  }
 
-    .hero-image-container {
-        height: min(60vh, 24rem);
-    }
+  .hero-image-subtitle-container {
+    width: 90%;
+  }
 
-    .hero-subtitle {
-        width: 90%;
-    }
+  .hero-image-container {
+    height: min(60vh, 24rem);
+  }
 
-    .cta-container {
-        width: 90%;
-    }
+  .cta-container {
+    width: 90%;
+  }
 }

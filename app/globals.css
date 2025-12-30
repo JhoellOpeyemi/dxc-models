@@ -16,10 +16,10 @@
   /* font sizes */
   --xxl-heading: 22.5rem; /* max 22.5rem */
   --xl-heading: 10rem; /* max 10rem */
-  --l-heading: 7rem; /* max 7rem */
-  --md-heading: clamp(2rem, 7vw, 5rem); /* max 5rem */
-  --heading: 3rem; /* max 3rem */
-  --sm-heading: 2.5rem; /* max 2.5rem */
+  --l-heading: clamp(4rem, 7vw + 0.3rem, 7rem); /* max 7rem */
+  --md-heading: clamp(2rem, 7vw + 0.3rem, 5rem); /* max 5rem */
+  --heading: clamp(2.5rem, 3vw, 3rem); /* max 3rem */
+  --sm-heading: clamp(1.5rem, 3.25vw + 0.15rem, 2.5rem); /* max 2.5rem */
   --page-heading: 4rem;
   --xl-text: 1.5rem;
   --l-text: 1.25rem;
