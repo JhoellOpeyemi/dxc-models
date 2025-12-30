@@ -1,8 +1,8 @@
 .home-features-heading-container {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    gap: calc(var(--gap) * 1.6);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  gap: calc(var(--gap) * 1.6);
 }
 
 .home-features-heading {
@@ -13,97 +13,151 @@
 }
 
 .home-features-subheading {
-    width: 30%;
-    margin-top: 4rem;
+  width: 30%;
+  margin-top: 4rem;
 }
 
 .home-features-container {
-    position: relative;
-    width: 100%;
-    margin-top: 5rem;
+  position: relative;
+  width: 100%;
+  margin-top: 5rem;
 }
 
 .home-features-main-media {
-    width: 60%;
-    aspect-ratio:  1 / 0.8;
-    background-color: var(--color-light-text);
+  width: 60%;
+  aspect-ratio: 1 / 0.8;
+  background-color: var(--color-light-text);
 }
 
-.home-features-other-media-container{
-    width: 100%;
-    display: flex;
-    justify-content:space-between;
-    gap: var(--gap);
-    margin-top:4rem;
+.home-features-other-media-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-top: 4rem;
 }
 
 .home-features-other-media {
-    background-color: var(--color-light-text);
-    width: 50%;
-    aspect-ratio:  1 / 0.6;
-    height: fit-content;
+  background-color: var(--color-light-text);
+  width: 50%;
+  aspect-ratio: 1 / 0.6;
+  height: fit-content;
 }
 
 .home-features-other-media:first-child {
-    margin-top: 11rem;
+  margin-top: 11rem;
 }
 
 @media screen and (max-width: 992px) {
-    .home-features-heading-container {
-        width: 100%;
-        flex-direction: column;
-    }
+  .home-features-heading-container {
+    width: 100%;
+    flex-direction: column;
+  }
 
-    .home-features-heading {
-        letter-spacing: -6px;
-    }
+  .home-features-heading {
+    letter-spacing: -6px;
+  }
 
-    .home-features-subheading {
-        width: 60%;
-        margin-top: 0;
-        align-self: flex-end;
-    }
+  .home-features-subheading {
+    width: 60%;
+    margin-top: 0;
+    align-self: flex-end;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .home-features-heading-container {
-        gap: calc(var(--gap) * 1.2);
-    }
+  .home-features-heading-container {
+    gap: calc(var(--gap) * 1.2);
+  }
 
-    .home-features-subheading {
-        width: 80%;
-        align-self: center;
-    }
+  .home-features-subheading {
+    width: 80%;
+    align-self: center;
+  }
 
-    .home-features-container {
-        margin-top: 3rem;
-    }
+  .home-features-container {
+    margin-top: 3rem;
+  }
 
-    .home-features-main-media {
-        width: min(32rem, 100%);
-        margin: 0 auto;
-    }
+  .home-features-main-media {
+      width: min(32rem, 100%);
+    margin: 0 auto;
+  }
 
-    .home-features-other-media-container {
-        flex-direction: column;
-        gap: calc(var(--gap) * 1.6);
-        margin-top: 2rem;
-    }
+  .home-features-other-media-container {
+    flex-direction: column;
+    gap: calc(var(--gap) * 1.6);
+    margin-top: 2rem;
+  }
 
-    .home-features-other-media {
-        width: min(32rem, 100%);
-        aspect-ratio:  1 / 0.7;
-        margin: 0 auto;
-    }
+  .home-features-other-media {
+    width: min(32rem, 100%);
+    margin: 0 auto;
+    aspect-ratio: 1 / 0.7;
+  }
 
-    .home-features-other-media:first-child {
-        margin-top: 0;
-    }
+  .home-features-other-media:first-child {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .home-features-subheading {
-        width: 100%;
-        align-self: flex-start;
-    }
+  .home-features-subheading {
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .home-features-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    width: max-content;
+    overflow-x: hidden;
+  }
+
+  .home-features-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-features-main-media {
+    width: 90vw;
+    margin: 0;
+  }
+
+  .home-features-other-media-container {
+    width: max-content;
+    flex-direction: row;
+    gap: 0.75rem;
+    margin: 0;
+  }
+
+  .home-features-other-media {
+    width: 90vw;
+    margin: 0;
+    aspect-ratio: 1 / 1.2;
+  }
+
+  .info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    margin-top: 1rem;
+  }
+
+  .info-container p {
+    font-style: italic;
+    font-size: 0.9375rem;
+  }
+
+  .arrow-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .arrow-container svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }

@@ -8,7 +8,7 @@
 .footer-inner-content-container {
   display: flex;
   justify-content: space-between;
-  gap: var(--gap);
+  gap: calc(var(--gap) * 1.6);
   margin: 4.5rem 0 6rem;
 }
 
@@ -40,8 +40,8 @@
 
 .footer-image-container {
   position: relative;
-  width: 15.5rem;
-  height: 15.5rem;
+  width: 13.5rem;
+  height: 13.5rem;
 }
 
 .footer-image {
@@ -63,11 +63,17 @@
   z-index: 3;
 }
 
+.footer-brand-container {
+    width: 100%;
+    overflow: hidden;
+}
+
 .footer-brand {
   text-transform: uppercase;
   font-size: var(--xl-heading);
   opacity: 0.6;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .brand-models {
