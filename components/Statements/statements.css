@@ -27,3 +27,47 @@
 .statement-text:not(:last-child) {
   margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+    .vision-mission-container {
+        flex-direction: column;
+        gap: calc(var(--gap) * 2.4);
+    }
+
+    .vision {
+        width: 80%;
+    }
+
+    .statement-separator {
+        width: 55%;
+        height: 0.125rem;
+        margin: 0 auto;
+        opacity: 0.3;
+    }
+
+    .mission {
+        width: 90%;
+        align-self: flex-end;
+        text-align: right;
+    }
+
+    .statement-heading {
+        margin-bottom: 1.5rem;
+    }
+
+    .statement-text:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .vision {
+        width: 100%;
+    }
+
+    .mission {
+        width: 100%;
+        align-self: flex-start;
+        text-align: left;
+    }
+}

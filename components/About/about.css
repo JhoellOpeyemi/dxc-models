@@ -19,3 +19,31 @@
   flex-direction: column;
   gap: calc(var(--gap) * 4);
 }
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: calc(var(--gap) * 2.4);
+    }
+
+    .about-heading {
+        position: relative;
+        top: unset;
+        width: 70%;
+        font-weight: 400;
+    }
+
+    .about-text-container {
+        width: 100%;
+        padding-top: 0;
+        gap: calc(var(--gap) * 2);
+    }
+
+    .about-text {
+        width: min(36rem, 90%);
+    }
+
+    .about-text:last-child {
+        align-self: flex-end;
+    }
+}

@@ -24,3 +24,23 @@
   width: 80%;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 768px) {
+    .about-image-container {
+        margin: 4rem 0;
+        gap: calc(var(--gap) * 3.2);
+    }
+
+    .about-image {
+        width: min(28rem, 100%);
+        aspect-ratio: 1 / 1.4;
+        height: unset;
+        max-height: unset;
+        margin: 0 auto;
+    }
+
+    .about-image-container h3 {
+        font-size: clamp(2rem, 3vw, 2.5rem);
+        width: 80%;
+    }
+}

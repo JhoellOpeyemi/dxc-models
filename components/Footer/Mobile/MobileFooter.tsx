@@ -35,6 +35,16 @@ const MobileFooter = () => {
                 <StyledLink path="/" label="Facebook" />
               </div>
 
+              <div className="mobile-footer-image-container">
+                <Image
+                  src="/hero-img.webp"
+                  alt=""
+                  className="mobile-footer-image"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  fill
+                />
+              </div>
+
               <nav className="mobile-footer-links-container">
                 <ul className="mobile-footer-links flex-column">
                   {linkArray.map(

@@ -30,6 +30,17 @@
     margin: 2rem 0;
 }
 
+.mobile-footer-image-container {
+  position: relative;
+  width: 10rem;
+  aspect-ratio: 1/1;
+  display: none;
+}
+
+.mobile-footer-image {
+  object-fit: cover;
+}
+
 .mobile-social-links-container,
 .mobile-footer-links {
     gap: 0.875rem;
@@ -62,5 +73,11 @@
 .mobile-brand-models {
   -webkit-text-stroke: 1px var(--color-lighter-text);
   -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 481px) {
+    .mobile-footer-image-container {
+          display: block
+        }
 }
 
