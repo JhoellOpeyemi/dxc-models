@@ -2,12 +2,12 @@ import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
 import { getQueryClient } from "@/app/get-query-client";
 import { prefetchHomeModels } from "@/sanity/lib/prefetch";
 
-import Hero from "@/components/Hero/Hero";
-import HomeAbout from "@/components/HomeAbout/HomeAbout";
-import HomeModels from "@/components/HomeModels/HomeModels";
-import HomeFeatures from "@/components/HomeFeatures/HomeFeatures";
-import Testimonials from "@/components/Testimonials/Testimonials";
-import Divider from "@/components/Divider";
+import Hero from "@/components/Home/Hero/Hero";
+import HomeAbout from "@/components/Home/HomeAbout/HomeAbout";
+import HomeModels from "@/components/Home/HomeModels/HomeModels";
+import HomeFeatures from "@/components/Home/HomeFeatures/HomeFeatures";
+import Testimonials from "@/components/Home/Testimonials/Testimonials";
+import Divider from "@/components/ui/Divider";
 
 export default async function Home() {
   const queryClient = getQueryClient();

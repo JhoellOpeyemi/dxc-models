@@ -1,8 +1,8 @@
-import About from "@/components/About/About";
-import AboutImage from "@/components/AboutImage/AboutImage";
-import Statements from "@/components/Statements/Statements";
-import Divider from "@/components/Divider";
-import Value from "@/components/Value/Value";
+import About from "@/components/About/AboutIntro/AboutIntro";
+import AboutImage from "@/components/About/AboutImage/AboutImage";
+import Statements from "@/components/About/Statements/Statements";
+import Divider from "@/components/ui/Divider";
+import Value from "@/components/About/Value/Value";
 
 export default function AboutPage() {
   return (

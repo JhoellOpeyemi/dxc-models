@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
-import BookingsReceived from "@/components/Emails/BookingsReceived";
+import BookingsReceived from "@/components/utils/Emails/BookingsReceived";
 
 const apiKey = process.env.RESEND_API_KEY;
 
@@ -34,25 +34,25 @@ export async function POST(req: Request) {
       console.error("Email send error:", error);
       return NextResponse.json(
         { error: "Failed to send confirmation email. Please try again" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json(
       { success: true, message: "Booking submitted successfully" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { error: error.issues.map((e) => e.message).join(", ") },
-        { status: 400 }
+        { status: 400 },
       );
     }
     console.error("Unexpected error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

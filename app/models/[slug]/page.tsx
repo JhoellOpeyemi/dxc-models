@@ -1,10 +1,11 @@
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
 import { getQueryClient } from "@/app/get-query-client";
 import { prefetchModelDetails } from "@/sanity/lib/prefetch";
-import ModelDetails from "@/components/ModelDetails/ModelDetails";
 import { client } from "@/sanity/lib/client";
 import { MODEL_DETAILS_QUERY } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
+// components imports
+import ModelDetails from "@/components/ModelsComponents/ModelDetails/ModelDetails";
 
 export async function generateMetadata({
   params,

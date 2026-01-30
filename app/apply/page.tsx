@@ -1,7 +1,7 @@
-import ApplyHero from "@/components/ApplyHero/ApplyHero";
-import ApplyText from "@/components/ApplyText/ApplyText";
-import ApplyInfo from "@/components/ApplyInfo/ApplyInfo";
-import ApplyForm from "@/components/ApplyForm/ApplyForm";
+import ApplyHero from "@/components/Apply/ApplyHero/ApplyHero";
+import ApplyText from "@/components/Apply/ApplyText/ApplyText";
+import ApplyInfo from "@/components/Apply/ApplyInfo/ApplyInfo";
+import ApplyForm from "@/components/Apply/ApplyForm/ApplyForm";
 
 export default function Apply() {
   return (

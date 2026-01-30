@@ -7,7 +7,7 @@ import { useWindowSize } from "@/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // component imports
-import StyledLink from "@/components/StyledLink/StyledLink";
+import StyledLink from "@/components/utils/StyledLink/StyledLink";
 import MobileNav from "@/components/Nav/Mobile/MobileNav";
 // utils imports
 import { linkArray } from "@/utils";
@@ -65,7 +65,7 @@ const Nav = () => {
                   <li key={path} className="nav-list">
                     <StyledLink path={path} label={label} />
                   </li>
-                )
+                ),
               )}
             </ul>
           </nav>
