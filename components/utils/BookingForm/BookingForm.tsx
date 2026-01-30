@@ -2,14 +2,14 @@ import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { bookingSchema } from "@/app/api/bookings/route";
+import { bookingSchema } from "@/app/api/bookings/schema";
 
 import FormBtn from "@/components/ui/FormBtn/FormBtn";
 import FormSuccess from "@/components/ui/FormSuccess/FormSuccess";
 
 import "./bookingForm.css";
 
-export type BookingFormData = z.infer<typeof bookingSchema>;
+export type BookingFormData = z.input<typeof bookingSchema>;
 
 interface BookingFormProps {
   closeBookingModal: () => void;

@@ -2,18 +2,11 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import BookingsReceived from "@/components/utils/Emails/BookingsReceived";
+import { bookingSchema } from "./schema";
 
 const apiKey = process.env.RESEND_API_KEY;
 
 const resend = new Resend("" + apiKey + "");
-
-export const bookingSchema = z.object({
-  modelName: z.string().min(1, "Model name is required"),
-  clientName: z.string().min(1, "Name is required"),
-  email: z.email("Invalid email address"),
-  eventDate: z.iso.date("Choose a valid date"),
-  message: z.string().min(10, "Please include details about the booking"),
-});
 
 export async function POST(req: Request) {
   try {
@@ -21,13 +14,21 @@ export async function POST(req: Request) {
     const validatedData = bookingSchema.parse(body);
 
     const { modelName, clientName, email, eventDate } = validatedData;
+    const eventDateStr =
+      eventDate instanceof Date
+        ? eventDate.toISOString().split("T")[0]
+        : String(eventDate);
 
     // Send email to client
     const { error } = await resend.emails.send({
       from: "Test <onboarding@resend.dev>",
       to: [email],
       subject: "Booking Request Received - DXC Models",
-      react: BookingsReceived({ clientName, modelName, eventDate }),
+      react: BookingsReceived({
+        clientName,
+        modelName,
+        eventDate: eventDateStr,
+      }),
     });
 
     if (error) {
