@@ -49,7 +49,7 @@ const Nav = () => {
       {isStudioPage ? (
         <div></div>
       ) : isMobile ? (
-        <MobileNav />
+        <MobileNav isVisible={isVisible} />
       ) : (
         <header
           className={`header flex-between container ${isVisible ? "show-header" : "hide-header"}`}

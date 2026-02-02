@@ -2,7 +2,7 @@
   background-color: var(--color-footer-bg);
   color: var(--color-lighter-text);
   margin-top: 5rem;
-  padding: 2rem 0 1rem;
+  padding: 3.5rem 0 1rem;
   overflow: hidden;
 }
 
@@ -23,11 +23,11 @@
 }
 
 .mobile-all-links-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--gap);
-    margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  margin: 2rem 0;
 }
 
 .mobile-footer-image-container {
@@ -43,23 +43,25 @@
 
 .mobile-social-links-container,
 .mobile-footer-links {
-    gap: 0.875rem;
+  gap: 1.15rem;
 }
 
 .mobile-footer-links {
-    align-items: flex-end;
+  align-items: flex-end;
+}
+
+.mobile-social-links-container a,
+.mobile-footer-link-list {
+  opacity: 0.8;
 }
 
 .mobile-creator-brand-container {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .mobile-creator {
-    text-align: center;
-}
-
-.mobile-footer-brand-container {
-    width: 100%;
+  text-align: center;
+  opacity: 0.7;
 }
 
 .mobile-footer-brand {
@@ -68,6 +70,46 @@
   opacity: 0.6;
   font-weight: 700;
   white-space: nowrap;
+  overflow: hidden;
+}
+
+.mobile-footer-brand-container {
+  overflow: hidden;
+}
+
+.mobile-footer-brand-marquee {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  width: max-content;
+  animation: mobile-marquee 15s linear infinite;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.mobile-footer-brand {
+  display: inline-block;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.mobile-footer-brand:last-child {
+  margin-right: 3rem;
+}
+
+.mobile-footer-brand-container:hover .mobile-footer-brand-marquee,
+.mobile-footer-brand-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes mobile-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .mobile-brand-models {
@@ -76,8 +118,7 @@
 }
 
 @media screen and (min-width: 481px) {
-    .mobile-footer-image-container {
-          display: block
-        }
+  .mobile-footer-image-container {
+    display: block;
+  }
 }
-

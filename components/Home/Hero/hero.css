@@ -14,10 +14,6 @@
   font-weight: 600;
 }
 
-.hero-heading .word:not(:last-child) {
-  margin-right: clamp(0.5rem, 2.5vw, 1.15rem);
-}
-
 .hero-content-container {
   gap: var(--gap);
 }

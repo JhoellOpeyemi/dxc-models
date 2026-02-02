@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -13,8 +13,13 @@ import { linkArray } from "@/utils";
 // styles import
 import "./mobileNav.css";
 
-const MobileNav = () => {
+interface MobileNavProps {
+  isVisible: boolean;
+}
+
+const MobileNav = ({ isVisible }: MobileNavProps) => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
+  const [currentTime, setCurrentTime] = useState<string>("");
 
   const handleNav = () => {
     setNavOpen(!navOpen);
@@ -24,9 +29,29 @@ const MobileNav = () => {
     setNavOpen(false);
   };
 
+  useEffect(() => {
+    const updateCurrentTime = (): void => {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const time = `${hours}:${minutes}`;
+      setCurrentTime(time);
+    };
+
+    // Update immediately
+    updateCurrentTime();
+
+    // Check every second if the minute has changed
+    const interval = setInterval(updateCurrentTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-      <header className="mobile-header flex-between">
+      <header
+        className={`mobile-header flex-between container ${isVisible ? "show-header" : "hide-header"}`}
+      >
         <Link href="/" className={`${navOpen ? "logo nav-open" : "logo"}`}>
           DXC
         </Link>
@@ -71,7 +96,9 @@ const MobileNav = () => {
         )}
 
         <div className="time-container">
-          <p className={`${navOpen ? "time nav-open" : "time"}`}>18:55</p>
+          <p className={`${navOpen ? "time nav-open" : "time"}`}>
+            {currentTime}
+          </p>
         </div>
 
         <div className="mobile-menu">

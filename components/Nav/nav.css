@@ -10,11 +10,11 @@
 }
 
 .show-header {
-    transform: translateY(0) translateX(-50%);
+  transform: translateY(0) translateX(-50%);
 }
 
 .hide-header {
-    transform: translateY(calc((-100% - 1.5rem))) translateX(-50%);
+  transform: translateY(calc((-100% - 1.5rem))) translateX(-50%);
 }
 
 .logo {

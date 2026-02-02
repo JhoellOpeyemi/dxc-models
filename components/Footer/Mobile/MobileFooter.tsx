@@ -60,10 +60,16 @@ const MobileFooter = () => {
 
         <div className="mobile-creator-brand-container">
           <div className="mobile-footer-brand-container">
-            <h5 className="mobile-footer-brand">
-              <span className="mobile-brand-dxc">Dxc</span>
-              <span className="mobile-brand-models">Models</span>
-            </h5>
+            <div className="mobile-footer-brand-marquee">
+              <h5 className="mobile-footer-brand">
+                <span className="mobile-brand-dxc">Dxc</span>
+                <span className="mobile-brand-models">Models</span>
+              </h5>
+              <h5 className="mobile-footer-brand" aria-hidden="true">
+                <span className="mobile-brand-dxc">Dxc</span>
+                <span className="mobile-brand-models">Models</span>
+              </h5>
+            </div>
           </div>
           <p className="mobile-creator">Website by Joel</p>
         </div>

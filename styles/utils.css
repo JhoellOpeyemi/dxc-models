@@ -163,10 +163,6 @@
   display: inline-block;
 }
 
-.word:not(:last-child) {
-  margin-right: 1rem;
-}
-
 @media screen and (max-width: 768px) {
   .divider {
     margin: 5rem 0;

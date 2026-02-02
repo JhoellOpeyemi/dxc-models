@@ -52,11 +52,15 @@ const DesktopFooter = () => {
         </div>
 
         <div className="socials-brand-container">
-          <div className="social-links-container">
-            <StyledLink path="/" label="WhatsApp" />
-            <StyledLink path="/" label="Twitter" />
-            <StyledLink path="/" label="Instagram" />
-            <StyledLink path="/" label="Facebook" />
+          <div className="social-links-credit-container">
+            <div className="social-links-container">
+              <StyledLink path="/" label="WhatsApp" />
+              <StyledLink path="/" label="Twitter" />
+              <StyledLink path="/" label="Instagram" />
+              <StyledLink path="/" label="Facebook" />
+            </div>
+
+            <p className="desktop-credit">Website by Joel</p>
           </div>
 
           <div className="footer-brand-container">

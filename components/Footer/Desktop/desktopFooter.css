@@ -35,7 +35,7 @@
 }
 
 .footer-links .link {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .footer-image-container {
@@ -54,6 +54,12 @@
   gap: calc(var(--gap) * 0.4);
 }
 
+.social-links-credit-container {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--gap) * 2);
+}
+
 .social-links-container {
   display: flex;
   gap: calc(var(--gap) * 2);
@@ -63,9 +69,13 @@
   z-index: 3;
 }
 
+.desktop-credit {
+  opacity: 0.8;
+}
+
 .footer-brand-container {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .footer-brand {

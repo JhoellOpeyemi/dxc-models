@@ -20,6 +20,18 @@ const SplitText = ({ text, splitType }: SplitTextProps) => {
                 {char}
               </span>
             ))}
+            &nbsp;
+          </span>
+        ))}
+      </>
+    );
+  } else if (splitType == "words") {
+    return (
+      <>
+        {(splitTextArray as string[]).map((part, index) => (
+          <span key={index} className="word">
+            {part}
+            &nbsp;
           </span>
         ))}
       </>
@@ -28,10 +40,7 @@ const SplitText = ({ text, splitType }: SplitTextProps) => {
     return (
       <>
         {(splitTextArray as string[]).map((part, index) => (
-          <span
-            key={index}
-            className={`${splitType === "words" ? "word" : "char"}`}
-          >
+          <span key={index} className="char">
             {part}
           </span>
         ))}

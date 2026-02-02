@@ -1,3 +1,7 @@
+.home-features-section {
+  overflow: hidden;
+}
+
 .home-features-heading-container {
   display: flex;
   justify-content: space-between;
@@ -21,6 +25,7 @@
   position: relative;
   width: 100%;
   margin-top: 5rem;
+  overflow: hidden;
 }
 
 .home-features-main-media {
@@ -80,7 +85,7 @@
   }
 
   .home-features-main-media {
-      width: min(32rem, 100%);
+    width: min(32rem, 100%);
     margin: 0 auto;
   }
 
@@ -112,7 +117,7 @@
     flex-wrap: nowrap;
     gap: 0.75rem;
     width: max-content;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .home-features-container::-webkit-scrollbar {
