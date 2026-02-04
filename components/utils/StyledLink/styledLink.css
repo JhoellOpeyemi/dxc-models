@@ -1,0 +1,12 @@
+.link {
+  position: relative;
+  text-transform: capitalize;
+  width: fit-content;
+  /* gap: 0.5rem; */
+}
+
+.link svg {
+  width: 24;
+  height: 24;
+  transform-origin: left;
+}

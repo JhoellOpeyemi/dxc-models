@@ -1,0 +1,15 @@
+.apply-form-container {
+  width: 75%;
+  max-width: 50rem;
+  margin: 10rem auto 0;
+}
+
+.apply-form-input-group {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--gap) * 3.2);
+}
+
+.apply-form-input-group:not(:last-child) {
+  margin-bottom: 2rem;
+}

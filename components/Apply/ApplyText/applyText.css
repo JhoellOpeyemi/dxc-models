@@ -1,0 +1,8 @@
+.apply-text-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 1.6);
+  width: 50%;
+  margin: 7rem 0 10rem 10%;
+}
