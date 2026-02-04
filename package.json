@@ -30,6 +30,7 @@
     "markdown-it": "^14.1.0",
     "next": "^16.1.6",
     "next-sanity": "^11.6.3-canary.1",
+    "next-transition-router": "^0.2.11",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-email": "5.0.3",
