@@ -1,0 +1,10 @@
+.model-error-title,
+.model-error-prompt {
+  text-align: center;
+  width: 80%;
+}
+
+.model-error-title {
+  font-size: var(--sm-heading);
+  margin: 5rem 1rem;
+}

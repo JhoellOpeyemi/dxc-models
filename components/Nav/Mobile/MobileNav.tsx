@@ -13,11 +13,7 @@ import { linkArray } from "@/utils";
 // styles import
 import "./mobileNav.css";
 
-interface MobileNavProps {
-  isVisible: boolean;
-}
-
-const MobileNav = ({ isVisible }: MobileNavProps) => {
+const MobileNav = () => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<string>("");
 
@@ -49,9 +45,7 @@ const MobileNav = ({ isVisible }: MobileNavProps) => {
 
   return (
     <>
-      <header
-        className={`mobile-header flex-between ${navOpen || isVisible ? "show-header" : "hide-header"}`}
-      >
+      <header className="mobile-header flex-between">
         <Link href="/" className={`${navOpen ? "logo nav-open" : "logo"}`}>
           DXC
         </Link>

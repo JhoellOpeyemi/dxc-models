@@ -93,11 +93,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable} suppressHydrationWarning>
       <body>
-        {/* <Lenis> */}
-        <Nav />
-        <Providers>{children}</Providers>
-        <Footer />
-        {/* </Lenis> */}
+        <Lenis>
+          <Nav />
+          <Providers>{children}</Providers>
+          <Footer />
+        </Lenis>
       </body>
     </html>
   );

@@ -4,14 +4,16 @@ import { useHomeModels } from "@/sanity/lib/hooks";
 
 import HomeModelCard from "./HomeModelCard/HomeModelCard";
 import StyledLink from "@/components/utils/StyledLink/StyledLink";
+import { HomeModelError } from "@/components/Errors/ModelError/ModelError";
 
 import "./homeModels.css";
+import { HomeModelLoading } from "@/components/Loading/ModelLoading/ModelLoading";
 
 const HomeModels = () => {
   const { data: models, isLoading, error } = useHomeModels();
 
-  if (isLoading) return <p>Loading Models...</p>;
-  if (error) return <p>Error loading models: {error.message}</p>;
+  if (isLoading) return <HomeModelLoading />;
+  if (error) return <HomeModelError />;
 
   return (
     <section className="home-models-container">
