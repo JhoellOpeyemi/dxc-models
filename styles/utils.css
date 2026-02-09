@@ -202,6 +202,8 @@
   .models-anim-container {
     height: 100svh;
     min-height: 100svh;
+    overflow-x: hidden;
+    padding-top: 15vh;
   }
 
   .model-main {
@@ -210,5 +212,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
   }
 }

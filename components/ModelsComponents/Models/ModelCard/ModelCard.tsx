@@ -60,14 +60,9 @@ const ModelCard = ({
             )}
           </div>
         </Link>
-      </li>
 
-      {/* <div className="model-stat-container">
-        <p className="model-stat">
-          <span className="stat-heading">Chest  — </span>
-            <span className="stat-value">{model.chest}</span>
-        </p>
-      </div> */}
+        <h3 className="mobile-model-name">{model.name}</h3>
+      </li>
     </>
   );
 };

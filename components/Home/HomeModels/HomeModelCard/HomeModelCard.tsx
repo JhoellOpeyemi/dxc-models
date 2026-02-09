@@ -24,15 +24,15 @@ const HomeModelCard = ({ model }: { model: Model }) => {
 
         <ul className="model-stats-container">
           <li className="model-stat">
-            <span className="stat-heading">Height — </span>
-            <span className="stat-value">{model.height}</span>
+            <span className="stat-heading">Height —</span>
+            <span className="stat-value">&nbsp;{model.height}</span>
           </li>
           <div className="stat-divider" />
 
           {model.bust && (
             <li className="model-stat">
               <span className="stat-heading">Bust — </span>
-              <span className="stat-value">{model.bust}</span>
+              <span className="stat-value">&nbsp;{model.bust}</span>
             </li>
           )}
 
