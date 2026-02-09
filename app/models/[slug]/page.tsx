@@ -1,4 +1,5 @@
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
+import { notFound } from "next/navigation";
 import { getQueryClient } from "@/app/get-query-client";
 import { prefetchModelDetails } from "@/sanity/lib/prefetch";
 import { client } from "@/sanity/lib/client";
@@ -63,7 +64,12 @@ export default async function ModelDetailsPage({
   const queryClient = getQueryClient();
   const { slug } = await params;
 
-  await prefetchModelDetails(queryClient, slug);
+  try {
+    await prefetchModelDetails(queryClient, slug);
+  } catch (error) {
+    console.error("Failed to load model details:", error);
+    notFound();
+  }
 
   return (
     <main className="container model-details-page-container">

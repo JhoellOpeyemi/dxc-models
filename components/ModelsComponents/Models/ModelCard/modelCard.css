@@ -1,3 +1,7 @@
+.model-card-container {
+  width: fit-content;
+}
+
 .model-index {
   text-align: right;
   font-size: 0.875rem;
@@ -28,5 +32,15 @@
 
   .model-card-container {
     transition: filter 1s ease;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .model-card-container {
+    width: 100%;
+  }
+
+  .model-card-image-container {
+    width: 100%;
   }
 }

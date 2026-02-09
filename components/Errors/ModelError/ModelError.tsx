@@ -9,3 +9,14 @@ export const HomeModelError = () => {
     </div>
   );
 };
+
+export const ModelError = () => {
+  return (
+    <div className="model-error-container">
+      <h3 className="model-error-title">Error Loading Models.</h3>
+      <p className="model-error-prompt">
+        Please check your connection and try again!
+      </p>
+    </div>
+  );
+};

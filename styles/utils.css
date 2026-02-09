@@ -163,7 +163,37 @@
   display: inline-block;
 }
 
+.model-main {
+  height: 85vh;
+  min-height: 85svh;
+  position: relative;
+  overflow: hidden;
+}
+
+.models-anim-container {
+  height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 13vh;
+}
+
+@media screen and (max-width: 992px) {
+  .model-main,
+  .models-anim-container {
+    height: auto;
+    min-height: auto;
+    overflow: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
+    .page-heading {
+
+  letter-spacing: -1px;
+}
+
   .divider {
     margin: 5rem 0;
   }

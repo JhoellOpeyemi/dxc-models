@@ -46,7 +46,11 @@ const MobileNav = () => {
   return (
     <>
       <header className="mobile-header flex-between">
-        <Link href="/" className={`${navOpen ? "logo nav-open" : "logo"}`}>
+        <Link
+          href="/"
+          className={`${navOpen ? "logo nav-open" : "logo"}`}
+          onClick={closeNav}
+        >
           DXC
         </Link>
 

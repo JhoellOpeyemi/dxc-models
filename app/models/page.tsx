@@ -11,19 +11,19 @@ import { AnimationProvider } from "@/contexts/AnimationProvider";
 import ModelsHeading from "@/components/ModelsComponents/ModelsHeading/ModelsHeading";
 import Models from "@/components/ModelsComponents/Models/Models";
 
-const modelMain: React.CSSProperties = {
-  height: "85vh",
-  minHeight: "85svh",
-  position: "relative",
-};
 export default async function ModelsPage() {
   // prefetch data on server for hydration
   const queryClient = getQueryClient();
-  await prefetchModels(queryClient);
+
+  try {
+    await prefetchModels(queryClient);
+  } catch (error) {
+    console.error("Failed to prefetch models:", error);
+  }
 
   return (
     <AnimationProvider>
-      <main style={modelMain}>
+      <main className="model-main">
         <HydrationBoundary state={dehydrate(queryClient)}>
           <ModelsProvider>
             <div className="container">

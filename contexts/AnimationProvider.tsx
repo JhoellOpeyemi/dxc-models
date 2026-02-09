@@ -17,19 +17,10 @@ export const useAnimationContext = () => {
   const context = useContext(AnimationContext);
   if (!context) {
     throw new Error(
-      "useAnimationContext must be used within AnimationProvider"
+      "useAnimationContext must be used within AnimationProvider",
     );
   }
   return context;
-};
-
-const animContainerStyles: React.CSSProperties = {
-  height: "100vh",
-  minHeight: "100svh",
-  width: "100vw",
-  position: "relative",
-  overflow: "hidden",
-  paddingTop: "13vh",
 };
 
 export const AnimationProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -65,11 +56,7 @@ export const AnimationProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <AnimationContext.Provider value={containerRef}>
-      <div
-        className="models-anim-container"
-        ref={containerRef}
-        style={animContainerStyles}
-      >
+      <div className="models-anim-container" ref={containerRef}>
         {/* <div className="models-anim-section"> */}
         {children}
         {/* </div> */}

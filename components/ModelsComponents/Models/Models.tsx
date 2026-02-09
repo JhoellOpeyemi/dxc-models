@@ -12,6 +12,7 @@ import { useAnimationContext } from "@/contexts/AnimationProvider";
 // components imports
 import ModelCard from "@/components/ModelsComponents/Models/ModelCard/ModelCard";
 import SplitText from "@/components/utils/SplitText";
+import { ModelError } from "@/components/Errors/ModelError/ModelError";
 
 // animation imports
 import { createRevealModelNameTimeline } from "./animation";
@@ -76,7 +77,7 @@ const Models = () => {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
+    mm.add("(min-width: 992px)", () => {
       const horizontalScrollTrigger = horizontalScroll(
         containerRef,
         scrollContainerRef,
@@ -92,7 +93,7 @@ const Models = () => {
   }, [refsReady]);
 
   if (isLoading) return <p>Loading Models...</p>;
-  if (error) return <p>Error loading models: Please check your connection.</p>;
+  if (error) return <ModelError />;
 
   return (
     <>

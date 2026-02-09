@@ -38,3 +38,27 @@
 .models-subheading {
   width: 40%;
 }
+
+@media screen and (max-width: 768px) {
+    .models-heading-filter {
+  gap: calc(var(--gap) * 1.2);
+  width: 100%;
+   justify-content:center;
+        align-items: center;
+}
+
+    .models-heading {
+        /* width: 100%; */
+text-align: center;
+    }
+    
+.models-filter-container {
+  width: 60%;
+}
+}
+
+@media screen and (max-width: 480px) {
+.models-filter-container {
+  width: 90%;
+}
+}

@@ -1,12 +1,24 @@
 .mobile-header {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   width: 100%;
-  padding: 1.5rem 5% 0;
+  padding: 1.25rem 5%;
   z-index: 5;
   transition: transform 0.25s linear;
+  background-color: none;
+  background-color: #fdfdfd9e;
+  backdrop-filter: blur(5px);
 }
+
+/* .mobile-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #fdfdfd9e;
+  backdrop-filter: blur(7px);
+  z-index: -1;
+} */
 
 .mobile-header .logo {
   color: var(--color-text);
@@ -22,6 +34,7 @@
   inset: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -90,7 +103,7 @@
 }
 
 .mobile-menu {
-    z-index: 5;
+  z-index: 5;
 }
 
 .mobile-menu-btn {
@@ -101,39 +114,39 @@
 }
 
 .mobile-menu-line {
-    width: 100%;
-    height: 0.125rem;
-    background-color: var(--color-text);
-    transition: transform 300ms ease;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--color-text);
+  transition: transform 300ms ease;
 }
 
 .mobile-menu-btn.nav-open .mobile-menu-line {
-    background-color: var(--color-lighter-text);
-    transition: transform 300ms ease;
+  background-color: var(--color-lighter-text);
+  transition: transform 300ms ease;
 }
 
 .mobile-menu-btn.nav-open .mobile-menu-line-1 {
-    transform: rotate(45deg) translateY(250%) translateX(8%);
+  transform: rotate(45deg) translateY(250%) translateX(8%);
 }
 
 .mobile-menu-btn.nav-open .mobile-menu-line-2 {
-    transform: rotate(-45deg) translateY(-250%);
+  transform: rotate(-45deg) translateY(-250%);
 }
 
 .time-container {
-    z-index: 5;
+  z-index: 5;
 }
 
 .time {
-    font-size: 0.975rem;
-    opacity: 0.9;
-    transition: all 300ms ease;
+  font-size: 0.975rem;
+  opacity: 0.9;
+  transition: all 300ms ease;
 }
 
 .time.nav-open {
-    color: var(--color-lighter-text);
-    opacity: 0.7;
-    transition: all 300ms ease;
+  color: var(--color-lighter-text);
+  opacity: 0.7;
+  transition: all 300ms ease;
 }
 
 @media screen and (max-width: 480px) {

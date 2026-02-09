@@ -3,8 +3,7 @@
 }
 
 .models-list-container {
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .model-card-wrapper {
@@ -25,7 +24,6 @@
   width: max-content;
   text-transform: uppercase;
   letter-spacing: -4px;
-  /* overflow: hidden; */
   pointer-events: none;
 }
 
@@ -35,4 +33,30 @@
 
 .model-name-preview .char {
   transform: translateY(100%);
+}
+
+@media screen and (max-width: 992px) {
+  .models-list-container {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .model-card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: var(--gap) calc(var(--gap) * 1.5);
+    width: 100%;
+    padding: 0 2rem;
+    height: fit-content;
+  }
+
+  .model-name-preview {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .models-section-container {
+  margin-top: 2rem;
+}
 }

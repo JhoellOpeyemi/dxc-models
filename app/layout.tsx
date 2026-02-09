@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import { ScrollToTopProvider } from "@/components/utils/ScrollToTopProvider";
+
 import Providers from "@/app/providers";
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
@@ -93,6 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable} suppressHydrationWarning>
       <body>
+        <ScrollToTopProvider />
         <Lenis>
           <Nav />
           <Providers>{children}</Providers>
