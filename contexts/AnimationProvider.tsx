@@ -57,9 +57,7 @@ export const AnimationProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <AnimationContext.Provider value={containerRef}>
       <div className="models-anim-container" ref={containerRef}>
-        {/* <div className="models-anim-section"> */}
         {children}
-        {/* </div> */}
       </div>
     </AnimationContext.Provider>
   );
