@@ -27,7 +27,6 @@ const HomeModelCard = ({ model }: { model: Model }) => {
             <span className="stat-heading">Height —</span>
             <span className="stat-value">&nbsp;{model.height}</span>
           </li>
-          <div className="stat-divider" />
 
           {model.bust && (
             <li className="model-stat">

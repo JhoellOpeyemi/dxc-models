@@ -46,13 +46,18 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--gap);
+  gap: var(--gap) 0;
 }
 
 .model-stat {
   text-transform: capitalize;
   font-size: 0.9375rem;
   white-space: nowrap;
+  padding: 0 var(--gap);
+}
+
+.model-stat:not(:last-child) {
+  border-right: 0.125rem solid var(--color-light-text);
 }
 
 .stat-heading {
@@ -62,12 +67,6 @@
 
 .stat-value {
   font-weight: 600;
-}
-
-.stat-divider {
-  width: 0.125rem;
-  height: 1.5rem;
-  background-color: var(--color-light-text);
 }
 
 .page-heading {

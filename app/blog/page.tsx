@@ -8,11 +8,7 @@ import Blogs from "@/components/Blog/Blogs/Blogs";
 export default async function Blog() {
   const queryClient = getQueryClient();
 
-  try {
-    await prefetchBlogs(queryClient);
-  } catch (error) {
-    console.error("Failed to prefetch blogs:", error);
-  }
+  await prefetchBlogs(queryClient);
 
   return (
     <main className="container">

@@ -15,11 +15,7 @@ export default async function ModelsPage() {
   // prefetch data on server for hydration
   const queryClient = getQueryClient();
 
-  try {
-    await prefetchModels(queryClient);
-  } catch (error) {
-    console.error("Failed to prefetch models:", error);
-  }
+  await prefetchModels(queryClient);
 
   return (
     <AnimationProvider>

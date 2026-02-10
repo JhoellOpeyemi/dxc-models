@@ -34,19 +34,16 @@ const ModelDetails = ({ slug }: { slug: string }) => {
                 <span className="stat-heading">Height — </span>
                 <span className="stat-value">{model?.height}</span>
               </p>
-              <div className="stat-divider" />
               {model?.gender == "female" && (
                 <>
                   <p className="model-stat">
                     <span className="stat-heading">Bust — </span>
                     <span className="stat-value">{model?.bust}</span>
                   </p>
-                  <div className="stat-divider" />
                   <p className="model-stat">
                     <span className="stat-heading">Hips — </span>
                     <span className="stat-value">{model?.hips}</span>
                   </p>
-                  <div className="stat-divider" />
                   <p className="model-stat">
                     <span className="stat-heading">Dress — </span>
                     <span className="stat-value">{model?.dress}</span>
@@ -59,33 +56,37 @@ const ModelDetails = ({ slug }: { slug: string }) => {
                     <span className="stat-heading">Chest — </span>
                     <span className="stat-value">{model?.chest}</span>
                   </p>
-                  <div className="stat-divider" />
                   <p className="model-stat">
                     <span className="stat-heading">Inseam — </span>
                     <span className="stat-value">{model?.inseam}</span>
                   </p>
                 </>
               )}
-              <div className="stat-divider" />
               <p className="model-stat">
                 <span className="stat-heading">Waist — </span>
                 <span className="stat-value">{model?.waist}</span>
               </p>
-              <div className="stat-divider" />
               <p className="model-stat">
                 <span className="stat-heading">Eyes — </span>
                 <span className="stat-value">{model?.eyes}</span>
               </p>
-              <div className="stat-divider" />
               <p className="model-stat">
                 <span className="stat-heading">Hair — </span>
                 <span className="stat-value">{model?.hair}</span>
               </p>
-              <div className="stat-divider" />
               <p className="model-stat">
                 <span className="stat-heading">Shoe — </span>
                 <span className="stat-value">{model?.shoe}</span>
               </p>
+            </div>
+
+            <div className="tab-book-model-btn-container">
+              <button
+                className={`${isBookingModal ? "link book-model-btn disabled" : "book-model-btn"}`}
+                onClick={() => setIsBookingModal(true)}
+              >
+                (Book {firstNameOfModel})
+              </button>
             </div>
           </div>
         </div>

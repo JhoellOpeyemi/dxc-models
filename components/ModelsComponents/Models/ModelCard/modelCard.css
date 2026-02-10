@@ -11,6 +11,7 @@
 .model-card-link {
   display: block;
   position: relative;
+  width: fit-content;
 }
 
 .model-card-image-container {
@@ -69,6 +70,11 @@
     justify-content: center;
   }
 
+  .model-index,
+  .model-card-image-container {
+    width: min(10rem, 55%);
+  }
+
   .model-card-image-container {
     aspect-ratio: 1 / 1;
   }
@@ -76,7 +82,7 @@
   .mobile-model-name {
     display: block;
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.5rem;
     left: 50%;
     width: 100%;
     transform: translateX(-50%);

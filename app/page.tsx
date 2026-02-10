@@ -12,11 +12,7 @@ import Divider from "@/components/ui/Divider";
 export default async function Home() {
   const queryClient = getQueryClient();
 
-  try {
-    await prefetchHomeModels(queryClient);
-  } catch (error) {
-    console.error("Failed to prefetch home models:", error);
-  }
+  await prefetchHomeModels(queryClient);
 
   return (
     <div className="container">
