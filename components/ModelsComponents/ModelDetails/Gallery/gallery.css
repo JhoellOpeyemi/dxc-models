@@ -1,0 +1,22 @@
+.gallery-media-container {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  gap: calc(var(--gap) * 1.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .gallery-media-container {
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .gallery-media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: calc(var(--gap) * 1.5) var(--gap);
+    width: 100%;
+    height: fit-content;
+  }
+}
