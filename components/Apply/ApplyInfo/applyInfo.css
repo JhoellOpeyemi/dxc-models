@@ -1,0 +1,54 @@
+.apply-info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.apply-info-text-container {
+  width: 50%;
+}
+
+.apply-info-heading {
+  font-size: var(--l-text);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.apply-info-text-container h4 {
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.apply-info-text-container ul {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.apply-info-text-container li {
+  list-style-type: circle;
+  line-height: 1.5;
+}
+
+.polaroids-info-container {
+  margin-bottom: 2rem;
+}
+
+.apply-info-images-container {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.apply-info-image-container {
+  position: relative;
+  width: calc(50% - (1.25rem / 2));
+  height: calc(50% - (1.25rem / 2));
+}
+
+.apply-info-image {
+  object-fit: cover;
+}

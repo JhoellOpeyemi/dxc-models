@@ -1,0 +1,9 @@
+.media-card-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+}
+
+.media-card-image {
+  object-fit: cover;
+}
