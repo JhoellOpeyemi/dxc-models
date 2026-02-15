@@ -1,4 +1,8 @@
-import "./modelError.css";
+import "./error.css";
+
+interface ErrorsProps {
+  label: string;
+}
 
 export const HomeModelError = () => {
   return (
@@ -10,11 +14,11 @@ export const HomeModelError = () => {
   );
 };
 
-export const ModelError = () => {
+export const Error = ({ label }: ErrorsProps) => {
   return (
-    <div className="model-error-container">
-      <h3 className="model-error-title">Error Loading Models.</h3>
-      <p className="model-error-prompt">
+    <div className="error-container">
+      <h3 className="error-title">Error Loading {label}.</h3>
+      <p className="error-prompt">
         Please check your connection and try again!
       </p>
     </div>

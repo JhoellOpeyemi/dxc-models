@@ -6,12 +6,12 @@
 }
 
 .home-model-error-title,
-.model-error-title {
+.error-title {
   font-size: var(--l-text);
   font-weight: 500;
 }
 
-.model-error-container {
+.error-container {
   width: 80%;
   margin: 5rem auto 0;
   display: flex;

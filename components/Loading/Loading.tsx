@@ -1,4 +1,8 @@
-import "./modelLoading.css";
+import "./loading.css";
+
+interface LoadingProps {
+  label: string;
+}
 
 export const HomeModelLoading = () => {
   return (
@@ -9,10 +13,10 @@ export const HomeModelLoading = () => {
   );
 };
 
-export const ModelLoading = () => {
+export const Loading = ({ label }: LoadingProps) => {
   return (
-    <div className="model-loading-container">
-      <p className="model-loading-prompt">Loading Models...</p>
+    <div className="loading-container">
+      <p className="loading-prompt">Loading {label}...</p>
     </div>
   );
 };

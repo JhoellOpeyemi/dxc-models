@@ -12,8 +12,8 @@ import { useAnimationContext } from "@/contexts/AnimationProvider";
 // components imports
 import ModelCard from "@/components/ModelsComponents/Models/ModelCard/ModelCard";
 import SplitText from "@/components/utils/SplitText";
-import { ModelError } from "@/components/Errors/ModelError/ModelError";
-import { ModelLoading } from "@/components/Loading/ModelLoading/ModelLoading";
+import { Error } from "@/components/Errors/Error";
+import { Loading } from "@/components/Loading/Loading";
 
 // animation imports
 import { createRevealModelNameTimeline } from "./animation";
@@ -94,8 +94,8 @@ const Models = () => {
   }, [refsReady]);
 
   //   if (isLoading) return <p>Loading Models...</p>;
-  if (isLoading) return <ModelLoading />;
-  if (error) return <ModelError />;
+  if (isLoading) return <Loading label="Models" />;
+  if (error) return <Error label="Models" />;
 
   return (
     <>

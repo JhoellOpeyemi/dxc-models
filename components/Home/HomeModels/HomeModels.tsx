@@ -4,10 +4,10 @@ import { useHomeModels } from "@/sanity/lib/hooks";
 
 import HomeModelCard from "./HomeModelCard/HomeModelCard";
 import StyledLink from "@/components/utils/StyledLink/StyledLink";
-import { HomeModelError } from "@/components/Errors/ModelError/ModelError";
+import { HomeModelError } from "@/components/Errors/Error";
 
 import "./homeModels.css";
-import { HomeModelLoading } from "@/components/Loading/ModelLoading/ModelLoading";
+import { HomeModelLoading } from "@/components/Loading/Loading";
 
 const HomeModels = () => {
   const { data: models, isLoading, error } = useHomeModels();
