@@ -6,3 +6,17 @@
   width: 50%;
   margin: 7rem 0 10rem 10%;
 }
+
+@media screen and (max-width: 850px) {
+  .apply-text-container {
+    width: 80%;
+    margin: 5rem 0 7rem 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .apply-text-container {
+    width: 100%;
+    margin: 4rem 0 5rem;
+  }
+}

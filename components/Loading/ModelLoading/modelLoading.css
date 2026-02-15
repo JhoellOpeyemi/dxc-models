@@ -1,6 +1,7 @@
 .home-model-loading-prompt {
   margin-top: 5rem;
   text-align: center;
+  animation: submitAnim 1s linear infinite alternate;
 }
 
 .model-loading-container {
@@ -11,4 +12,14 @@
 .model-loading-prompt {
   font-size: var(--l-text);
   font-weight: 500;
+  animation: submitAnim 1s linear infinite alternate;
+}
+
+@keyframes loadingAnim {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
 }
