@@ -2,3 +2,13 @@
   margin-top: 5rem;
   text-align: center;
 }
+
+.model-loading-container {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.model-loading-prompt {
+  font-size: var(--l-text);
+  font-weight: 500;
+}

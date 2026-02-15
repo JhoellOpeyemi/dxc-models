@@ -9,6 +9,9 @@
 
 .brands-text-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   width: 40%;
   align-self: flex-end;
 }
@@ -23,11 +26,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: calc(var(--gap) * 0.8) calc(var(--gap) * 1.6);
-  margin-top: 1.5rem;
 }
 
 .brand {
   white-space: nowrap;
+}
+
+.brands-text-container a {
+  font-size: var(--sm-button);
+  font-weight: 500;
 }
 
 .brands-video-container {
@@ -90,6 +97,5 @@
 
   .brands-list {
     gap: calc(var(--gap) * 0.8) calc(var(--gap) * 1.2);
-    margin-top: 1.5rem;
   }
 }

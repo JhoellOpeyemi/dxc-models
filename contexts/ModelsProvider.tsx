@@ -60,7 +60,3 @@ export const useModelsContext = () => {
     throw new Error("useModelsContext must be used within ModelsProvider");
   return ctx;
 };
-
-// git remote add origin git@github.com:JhoellOpeyemi/r.git
-// git branch -M master
-// git push -u origin master

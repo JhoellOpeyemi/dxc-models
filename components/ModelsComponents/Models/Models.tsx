@@ -13,6 +13,7 @@ import { useAnimationContext } from "@/contexts/AnimationProvider";
 import ModelCard from "@/components/ModelsComponents/Models/ModelCard/ModelCard";
 import SplitText from "@/components/utils/SplitText";
 import { ModelError } from "@/components/Errors/ModelError/ModelError";
+import { ModelLoading } from "@/components/Loading/ModelLoading/ModelLoading";
 
 // animation imports
 import { createRevealModelNameTimeline } from "./animation";
@@ -92,7 +93,8 @@ const Models = () => {
     return () => mm.revert();
   }, [refsReady]);
 
-  if (isLoading) return <p>Loading Models...</p>;
+  //   if (isLoading) return <p>Loading Models...</p>;
+  if (isLoading) return <ModelLoading />;
   if (error) return <ModelError />;
 
   return (

@@ -1,3 +1,5 @@
+import StyledLink from "@/components/utils/StyledLink/StyledLink";
+
 import { brands } from "@/utils";
 
 import "./brands.css";
@@ -15,6 +17,8 @@ const Brands = () => {
             </li>
           ))}
         </ul>
+
+        <StyledLink path="/about" label="Read More About Us" />
       </div>
 
       <div className="brands-video-container">

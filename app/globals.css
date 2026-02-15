@@ -16,7 +16,7 @@
   /* font sizes */
   --xxl-heading: 22.5rem; /* max 22.5rem */
   /* --xl-heading: clamp(5rem, 12vw, 10rem); */
-  --xl-heading: 10rem;
+  --xl-heading: clamp(5rem, 15vw + 0.5rem, 10rem);
   --mobile-xl-heading: 7rem;
   --l-heading: clamp(4rem, 7vw + 0.3rem, 7rem); /* max 7rem */
   --md-heading: clamp(2rem, 7vw + 0.3rem, 5rem); /* max 5rem */

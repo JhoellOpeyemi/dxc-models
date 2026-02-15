@@ -8,3 +8,11 @@ export const HomeModelLoading = () => {
     </div>
   );
 };
+
+export const ModelLoading = () => {
+  return (
+    <div className="model-loading-container">
+      <p className="model-loading-prompt">Loading Models...</p>
+    </div>
+  );
+};

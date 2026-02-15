@@ -20,14 +20,14 @@ export default async function ModelsPage() {
   return (
     <AnimationProvider>
       <main className="model-main">
-        <HydrationBoundary state={dehydrate(queryClient)}>
-          <ModelsProvider>
-            <div className="container">
-              <ModelsHeading />
-            </div>
+        <ModelsProvider>
+          <div className="container">
+            <ModelsHeading />
+          </div>
+          <HydrationBoundary state={dehydrate(queryClient)}>
             <Models />
-          </ModelsProvider>
-        </HydrationBoundary>
+          </HydrationBoundary>
+        </ModelsProvider>
       </main>
     </AnimationProvider>
   );

@@ -9,8 +9,6 @@ import "./blogs.css";
 const Blogs = () => {
   const { data: blogs, isLoading, error } = useBlogs();
 
-  console.log(blogs);
-
   if (isLoading) return <p>Loading Blogs...</p>;
   if (error) return <p>Error loading blogs: {error.message}</p>;
 
