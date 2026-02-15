@@ -19,7 +19,7 @@
   --xl-heading: clamp(5rem, 15vw + 0.5rem, 10rem);
   --mobile-xl-heading: 7rem;
   --l-heading: clamp(4rem, 7vw + 0.3rem, 7rem); /* max 7rem */
-  --md-heading: clamp(2rem, 7vw + 0.3rem, 5rem); /* max 5rem */
+  --md-heading: clamp(2.5rem, 7vw + 0.3rem, 5rem); /* max 5rem */
   --heading: clamp(2.25rem, 3vw, 3rem); /* max 3rem */
   --sm-heading: clamp(1.5rem, 3.25vw + 0.15rem, 2.5rem); /* max 2.5rem */
   --page-heading: clamp(2.5rem, 7vw, 4rem);

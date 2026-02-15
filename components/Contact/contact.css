@@ -1,5 +1,5 @@
 .contact-section-container {
-  padding-top: 8rem;
+  padding-top: 17vh;
 }
 
 .contact-heading {
@@ -11,4 +11,24 @@
 .contact-closing-remark {
   width: 40%;
   margin-top: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-heading {
+    width: 80%;
+  }
+
+  .contact-closing-remark {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-heading {
+    width: 90%;
+  }
+
+  .contact-closing-remark {
+    width: 100%;
+  }
 }
