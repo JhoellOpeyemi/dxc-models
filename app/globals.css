@@ -14,7 +14,7 @@
   --color-success: #52c41a;
 
   /* font sizes */
-  --xxl-heading: 22.5rem; /* max 22.5rem */
+  --xxl-heading: clamp(7rem, 30vw + 1rem, 22.5rem); /* max 22.5rem */
   /* --xl-heading: clamp(5rem, 12vw, 10rem); */
   --xl-heading: clamp(5rem, 15vw + 0.5rem, 10rem);
   --mobile-xl-heading: 7rem;

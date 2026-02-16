@@ -35,6 +35,8 @@ const Models = () => {
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+  console.log(filteredModels);
+
   useEffect(() => {
     if (modelName) {
       // delay to ensure DOM is updated before animation

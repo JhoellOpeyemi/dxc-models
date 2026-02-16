@@ -18,7 +18,6 @@ export async function prefetchHomeModels(queryClient: QueryClient) {
     });
   } catch (error) {
     console.error("Error prefetching home models:", error);
-    // Don't throw - allow page to render with fallback
   }
 }
 
@@ -33,7 +32,6 @@ export async function prefetchModels(queryClient: QueryClient) {
     });
   } catch (error) {
     console.error("Error prefetching models:", error);
-    // Don't throw - allow page to render with fallback
   }
 }
 
@@ -54,7 +52,6 @@ export async function prefetchModelDetails(
     });
   } catch (error) {
     console.error("Error prefetching model details:", error);
-    // Don't throw - allow page to render with fallback
   }
 }
 
@@ -69,6 +66,5 @@ export async function prefetchBlogs(queryClient: QueryClient) {
     });
   } catch (error) {
     console.error("Error prefetching blogs:", error);
-    // Don't throw - allow page to render with fallback
   }
 }

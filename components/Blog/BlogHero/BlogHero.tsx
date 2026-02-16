@@ -13,6 +13,7 @@ const BlogHero = () => {
             src="/brands-img.webp"
             alt=""
             className="blog-hero-image"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
           />
         </div>
@@ -21,6 +22,7 @@ const BlogHero = () => {
             src="/brands-img.webp"
             alt=""
             className="blog-hero-image"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
           />
         </div>

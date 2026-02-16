@@ -14,24 +14,24 @@ export const linkArray = [
 ];
 
 export const brands = [
-    "Bolt",
-    "Puma",
-    "Salonpas",
-    "Skit Ng",
-    "Tecno",
-    "LYS Apparel",
-    "Fancy Africa",
-    "ShopRite",
-    "Fasha",
-    "Cowbell Milk",
-    "Zinni Luxury",
-    "Dang!",
-    "Xclusif",
-    "Desperados",
-    "Maestro Nigeria",
-    "Lost in Lagos",
-    "Ci Gusta",
-  ];
+  "Bolt",
+  "Puma",
+  "Salonpas",
+  "Skit Ng",
+  "Tecno",
+  "LYS Apparel",
+  "Fancy Africa",
+  "ShopRite",
+  "Fasha",
+  "Cowbell Milk",
+  "Zinni Luxury",
+  "Dang!",
+  "Xclusif",
+  "Desperados",
+  "Maestro Nigeria",
+  "Lost in Lagos",
+  "Ci Gusta",
+];
 
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", {
@@ -48,7 +48,7 @@ export const formatIndex = (index: number) => {
 
 export function getSplitText(
   text: string,
-  splitType: "words" | "chars" | "words, chars"
+  splitType: "words" | "chars" | "words, chars",
 ): string[] | string[][] {
   if (splitType === "words") {
     return text.split(/\s+/);
@@ -63,7 +63,7 @@ export function getSplitText(
 
 export const horizontalScroll = (
   triggerElement: React.RefObject<HTMLElement | null>,
-  elementToScroll: React.RefObject<HTMLElement | null>
+  elementToScroll: React.RefObject<HTMLElement | null>,
 ) => {
   if (!triggerElement.current || !elementToScroll.current) return null;
 

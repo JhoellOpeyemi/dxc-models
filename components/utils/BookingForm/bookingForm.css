@@ -108,6 +108,10 @@
     opacity: 0.7;
   }
 
+  .booking-form-container .styled-textarea {
+    height: 7rem;
+  }
+
   .booking-form-container .form-btn-container {
     margin-top: 3rem;
   }

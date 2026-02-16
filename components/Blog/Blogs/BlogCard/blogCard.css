@@ -52,3 +52,24 @@
 .blog-date-posted {
   font-size: 0.875rem;
 }
+
+@media screen and (max-width: 850px) {
+  .blog-container {
+    gap: calc(var(--gap) * 2.4);
+    align-items: flex-end;
+  }
+
+  .blog-title-n-body-container {
+    gap: calc(var(--gap) * 1.6);
+    margin-bottom: 2.5rem;
+  }
+
+  .blog-image-container {
+    width: 16rem;
+    aspect-ratio: 2 / 1.35;
+  }
+
+  .blog-date-posted {
+    display: none;
+  }
+}

@@ -86,8 +86,8 @@
 
   .model-card-wrapper {
     display: flex;
-    gap: var(--gap);
-    width: max-content;
+    gap: unset;
+    width: 100vw;
     grid-template-columns: unset;
     height: 100%;
   }
