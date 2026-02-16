@@ -14,7 +14,7 @@
   --color-success: #52c41a;
 
   /* font sizes */
-  --xxl-heading: clamp(7rem, 30vw + 1rem, 22.5rem); /* max 22.5rem */
+  --xxl-heading: clamp(7rem, 30vw + 0.5rem, 22.5rem); /* max 22.5rem */
   /* --xl-heading: clamp(5rem, 12vw, 10rem); */
   --xl-heading: clamp(5rem, 15vw + 0.5rem, 10rem);
   --mobile-xl-heading: 7rem;
@@ -23,7 +23,7 @@
   --heading: clamp(2.25rem, 3vw, 3rem); /* max 3rem */
   --sm-heading: clamp(1.5rem, 3.25vw + 0.15rem, 2.5rem); /* max 2.5rem */
   --page-heading: clamp(2.5rem, 7vw, 4rem);
-  --xl-text: 1.5rem;
+  --xl-text: clamp(1.25rem, 2vw + 0.1rem, 1.5rem);
   --l-text: 1.25rem;
   --md-text: 1.125rem;
   --text: 1rem;

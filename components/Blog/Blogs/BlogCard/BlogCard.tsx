@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { Blog } from "@/sanity/types";
@@ -9,6 +13,12 @@ import StyledLink from "@/components/utils/StyledLink/StyledLink";
 import "./blogCard.css";
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
+  const [isClient, setIsClient] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const md = markdownit();
   const parsedIntroduction = md.render(blog.introduction || "");
 
@@ -18,14 +28,14 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
         <div className="blog-title-n-body-container">
           <h2 className="blog-title">{blog.title}</h2>
 
-          {parsedIntroduction ? (
-            <p
-              dangerouslySetInnerHTML={{ __html: parsedIntroduction }}
-              className="blog-intro"
-            />
-          ) : (
-            <p className="blog-intro"></p>
-          )}
+          <>
+            {isClient && parsedIntroduction && (
+              <p
+                dangerouslySetInnerHTML={{ __html: parsedIntroduction }}
+                className="blog-intro"
+              />
+            )}
+          </>
         </div>
 
         <StyledLink path="/" label="Read More" />

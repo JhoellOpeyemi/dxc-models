@@ -73,3 +73,25 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .blog-container {
+    padding: 2.5rem 0;
+    justify-content: unset;
+    flex-direction: column;
+    gap: calc(var(--gap) * 2.4);
+    align-items: unset;
+  }
+
+  .blog-text-container {
+    width: 100%;
+  }
+
+  .blog-image-container {
+    display: none;
+  }
+
+  .blog-text-container .link {
+    font-size: var(--text);
+  }
+}
