@@ -1,8 +1,9 @@
 "use client";
 
 // libraries imports
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 // context imports
@@ -24,18 +25,57 @@ import "./models.css";
 // functions imports
 import { horizontalScroll } from "@/utils";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Models = () => {
   const { filteredModels, isLoading, error } = useModelsContext();
   const containerRef = useAnimationContext();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [refsReady, setRefsReady] = useState(false);
+  const [refsReady, setRefsReady] = useState<boolean>(false);
   const [modelName, setModelName] = useState<string>("");
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  console.log(filteredModels);
+  const handleModelMouseLeave = () => {
+    if (timelineRef.current) {
+      timelineRef.current.reverse();
+    } else {
+      setModelName("");
+    }
+    setActiveIndex(null);
+  };
+
+  const handleModelHover = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 992px)", () => {
+        const horizontalScrollTrigger = horizontalScroll(
+          containerRef,
+          scrollContainerRef,
+        );
+
+        return horizontalScrollTrigger?.kill;
+      });
+
+      mm.add("(max-width: 767px)", () => {
+        return () => {};
+      });
+
+      return () => mm.revert();
+    },
+    { dependencies: [refsReady] },
+  );
+
+  useEffect(() => {
+    if (containerRef.current && scrollContainerRef.current) {
+      setRefsReady(true);
+    }
+  });
 
   useEffect(() => {
     if (modelName) {
@@ -56,46 +96,6 @@ const Models = () => {
     }
   }, [modelName]);
 
-  const handleModelMouseLeave = () => {
-    if (timelineRef.current) {
-      timelineRef.current.reverse();
-    } else {
-      setModelName("");
-    }
-    setActiveIndex(null);
-  };
-
-  const handleModelHover = (index: number) => {
-    setActiveIndex(index);
-  };
-
-  useEffect(() => {
-    if (containerRef.current && scrollContainerRef.current) {
-      setRefsReady(true);
-    }
-  }, [containerRef, scrollContainerRef]);
-
-  useGSAP(() => {
-    if (!refsReady) return;
-
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 992px)", () => {
-      const horizontalScrollTrigger = horizontalScroll(
-        containerRef,
-        scrollContainerRef,
-      );
-      return horizontalScrollTrigger?.kill;
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      return () => {};
-    });
-
-    return () => mm.revert();
-  }, [refsReady]);
-
-  //   if (isLoading) return <p>Loading Models...</p>;
   if (isLoading) return <Loading label="Models" />;
   if (error) return <Error label="Models" />;
 

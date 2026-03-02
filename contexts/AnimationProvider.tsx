@@ -5,8 +5,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-// import { modelsDesktopScrollAnimation } from "./animation";
-
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 type AnimationContextType = React.RefObject<HTMLDivElement | null> | null;
@@ -27,7 +25,6 @@ export const AnimationProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  //   const tl = useRef<gsap.core.Timeline | null>(null);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -48,11 +45,6 @@ export const AnimationProvider: React.FC<{ children: React.ReactNode }> = ({
 
     return () => mm.revert();
   }, [containerRef]);
-
-  // Force ScrollTrigger refresh on component mount/update for hot reloading
-  //   React.useEffect(() => {
-  //     ScrollTrigger.refresh();
-  //   }, []);
 
   return (
     <AnimationContext.Provider value={containerRef}>

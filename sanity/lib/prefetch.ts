@@ -5,6 +5,7 @@ import {
   BLOGS_QUERY,
   MODELS_QUERY,
   MODEL_DETAILS_QUERY,
+  BLOG_DETAILS_QUERY,
 } from "./queries";
 
 export async function prefetchHomeModels(queryClient: QueryClient) {
@@ -66,5 +67,25 @@ export async function prefetchBlogs(queryClient: QueryClient) {
     });
   } catch (error) {
     console.error("Error prefetching blogs:", error);
+  }
+}
+
+export async function prefetchBlogDetails(
+  queryClient: QueryClient,
+  slug: string,
+) {
+  try {
+    await queryClient.prefetchQuery({
+      queryKey: ["blog", slug],
+      queryFn: async () => {
+        const data = await client.fetch(BLOG_DETAILS_QUERY, { slug });
+        if (!data) {
+          throw new Error("Blog not found");
+        }
+        return data;
+      },
+    });
+  } catch (error) {
+    console.error("Error prefetching blog details:", error);
   }
 }

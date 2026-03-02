@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,6 +70,8 @@ export const horizontalScroll = (
   const trigger = triggerElement.current;
   const element = elementToScroll.current;
 
+  console.log(trigger);
+
   const getScrollAmount = () => {
     const elementWidth = element.offsetWidth;
     return -(elementWidth - window.innerWidth);
@@ -97,16 +99,3 @@ export const horizontalScroll = (
 
   return { kill };
 };
-
-// export const getHoveredModelCard = (
-//   activeIndex: number | null,
-//   scrollContainerRef: React.RefObject<HTMLElement | null>
-// ): HTMLElement | null => {
-//   if (activeIndex === null) return null;
-//   const container = scrollContainerRef.current;
-//   if (!container) return null;
-//   const cards = Array.from(
-//     container.querySelectorAll(".model-card-container")
-//   ) as HTMLElement[];
-//   return cards[activeIndex] || null;
-// };

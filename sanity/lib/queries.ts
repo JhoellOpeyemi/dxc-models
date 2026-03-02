@@ -7,11 +7,31 @@ export const BLOGS_QUERY = defineQuery(
         _createdAt,
         _updatedAt,
         _rev,
+        "slug": slug.current,
         date,
         image,
         title,
         introduction
-    }`
+    }`,
+);
+
+export const BLOG_DETAILS_QUERY = defineQuery(
+  `*[_type =='blog' && slug.current == $slug][0] {
+        _id,
+        _type,
+        _createdAt,
+        _updatedAt,
+        _rev,
+        title,
+        "slug": slug.current,
+        author,
+        image,
+        category,
+        introduction,
+        body,
+        conclusion,
+        date
+    }`,
 );
 
 export const HOME_MODELS_QUERY = defineQuery(
@@ -27,7 +47,7 @@ export const HOME_MODELS_QUERY = defineQuery(
         height,
         bust,
         chest
-    }`
+    }`,
 );
 
 export const MODELS_QUERY = defineQuery(
@@ -51,7 +71,7 @@ export const MODELS_QUERY = defineQuery(
         chest,
         inseam,
         gender
-    }`
+    }`,
 );
 
 export const MODEL_DETAILS_QUERY = defineQuery(
@@ -76,5 +96,5 @@ export const MODEL_DETAILS_QUERY = defineQuery(
         inseam,
         "gallery": gallery[].asset->url,
         gender
-    }`
+    }`,
 );

@@ -5,6 +5,7 @@ import {
   BLOGS_QUERY,
   MODELS_QUERY,
   MODEL_DETAILS_QUERY,
+  BLOG_DETAILS_QUERY,
 } from "./queries";
 import { Model, Blog } from "@/sanity/types";
 
@@ -50,5 +51,20 @@ export const useBlogs = () => {
       const data = await client.fetch<Blog[]>(BLOGS_QUERY);
       return data;
     },
+  });
+};
+
+export const useBlogDetails = (slug: string) => {
+  return useQuery({
+    queryKey: ["blog", slug],
+    queryFn: async () => {
+      const data = await client.fetch<Blog>(BLOG_DETAILS_QUERY, { slug });
+      if (!data) {
+        throw new Error("Blog not found");
+      }
+      return data;
+    },
+    enabled: !!slug,
+    retry: 1,
   });
 };

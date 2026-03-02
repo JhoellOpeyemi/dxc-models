@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import { Model } from "@/sanity/types";
 
@@ -7,7 +8,11 @@ import "./homeModelCard.css";
 const HomeModelCard = ({ model }: { model: Model }) => {
   return (
     <div className="home-model-card-container flex-column">
-      <div className="home-model-image-container">
+      <Link
+        className="home-model-image-container"
+        href={`/models/${model.slug}`}
+        aria-label={`View ${model.name}'s profile`}
+      >
         {model.headshot && (
           <Image
             src={urlFor(model.headshot).auto("format").url()}
@@ -17,7 +22,7 @@ const HomeModelCard = ({ model }: { model: Model }) => {
             fill
           />
         )}
-      </div>
+      </Link>
 
       <div className="home-model-info-container">
         <h3 className="home-model-name">{model.name}</h3>

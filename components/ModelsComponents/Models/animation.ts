@@ -9,7 +9,7 @@ export const createRevealModelNameTimeline = () => {
   tl.to(".model-name-preview .char", {
     y: 0,
     stagger: { from: "center", each: 0.0125 },
-    duration: 0.2,
+    duration: 0.175,
     ease: "power1.out",
   });
 
