@@ -15,11 +15,11 @@
 }
 
 .form-success-icon {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .form-success-icon path {
-    fill: var(--color-primary);
+  fill: var(--color-primary);
 }
 
 .form-success-message {

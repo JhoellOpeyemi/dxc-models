@@ -11,7 +11,3 @@
   color: var(--color-lighter-text);
   border-bottom: 2px solid var(--color-lighter-text);
 }
-
-.styled-select option {
-  text-transform: capitalize;
-}

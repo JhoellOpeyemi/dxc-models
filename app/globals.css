@@ -1,6 +1,7 @@
 :root {
   /* colors */
   --color-primary: #795119;
+  --color-dark-primary: #5a3a12;
   --color-bg: #fdfdfd;
   --color-footer-bg: #0f0f0f;
   --color-text: #333;
@@ -107,6 +108,10 @@ button {
 
 span {
   display: inline-block;
+}
+
+select option {
+  text-transform: capitalize;
 }
 
 ::-webkit-scrollbar {

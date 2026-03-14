@@ -46,15 +46,11 @@ const BookingForm = ({ closeBookingModal, modelName }: BookingFormProps) => {
 
       if (response.ok) {
         setSubmitSuccess(true);
-        // Optionally close modal after a delay
         setTimeout(() => {
           closeBookingModal();
         }, 3000);
       } else {
-        const errorData = await response.json();
-        setSubmitError(
-          errorData.error || "An error occurred while submitting the booking.",
-        );
+        setSubmitError("An error occurred while submitting the booking.");
       }
     } catch (error) {
       setSubmitError("Network error. Please try again.");

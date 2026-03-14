@@ -2,9 +2,11 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import BookingsReceived from "@/components/utils/Emails/BookingsReceived";
+import Booking from "@/components/utils/Emails/Booking";
 import { bookingSchema } from "./schema";
 
 const apiKey = process.env.RESEND_API_KEY;
+const agencyEmail = process.env.AGENCY_EMAIL;
 
 const resend = new Resend("" + apiKey + "");
 
@@ -31,8 +33,26 @@ export async function POST(req: Request) {
       }),
     });
 
+    // send email to agency
+    if (agencyEmail) {
+      const { error: agencyError } = await resend.emails.send({
+        from: "Test <onboarding@resend.dev>",
+        to: [agencyEmail],
+        subject: "New Booking Received - DXC Models",
+        react: Booking({
+          clientName: validatedData.clientName,
+          modelName: validatedData.modelName,
+          email: validatedData.email,
+          eventDate: eventDateStr,
+          message: validatedData.message,
+        }),
+      });
+      if (agencyError) {
+        console.error("Failed to send agency email");
+      }
+    }
+
     if (error) {
-      console.error("Email send error:", error);
       return NextResponse.json(
         { error: "Failed to send confirmation email. Please try again" },
         { status: 500 },
@@ -50,7 +70,6 @@ export async function POST(req: Request) {
         { status: 400 },
       );
     }
-    console.error("Unexpected error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },

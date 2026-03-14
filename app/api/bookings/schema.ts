@@ -16,7 +16,7 @@ const parseDateString = (val: unknown) => {
 export const bookingSchema = z.object({
   modelName: z.string().min(1, "Model name is required"),
   clientName: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email address"),
+  email: z.email("Invalid email address"),
   eventDate: z.preprocess(
     parseDateString,
     z.date().refine(
